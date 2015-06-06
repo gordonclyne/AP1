@@ -1,25 +1,214 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AP1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="TransparentView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZY-F0-6ME" userLabel="Settings View">
+                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="32" minValue="1" maxValue="128" continuous="NO" minimumValueImage="thin-line.png" maximumValueImage="many-lines.png" translatesAutoresizingMaskIntoConstraints="NO" id="FsF-7i-Hu3" userLabel="Line Count Slider">
+                                        <rect key="frame" x="-2" y="6" width="299" height="32"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="64" continuous="NO" minimumValueImage="right-line.png" maximumValueImage="many-lines.png" translatesAutoresizingMaskIntoConstraints="NO" id="afh-zp-Mdm" userLabel="Left Lines Slider">
+                                        <rect key="frame" x="-15" y="45" width="312" height="32"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="64" continuous="NO" minimumValueImage="right-line.png" maximumValueImage="many-lines.png" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-WS-1Ie" userLabel="Right Lines Slider">
+                                        <rect key="frame" x="296" y="6" width="298" height="32"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.10000000149011612" maxValue="10" continuous="NO" minimumValueImage="right-line.png" maximumValueImage="thick-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="c0d-b2-pPe" userLabel="Line Thickness Slider">
+                                        <rect key="frame" x="296" y="45" width="298" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="sj9-Ir-P3U"/>
+                                        </constraints>
+                                    </slider>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-KA-Vg6">
+                                        <rect key="frame" x="44" y="126" width="85" height="29"/>
+                                        <segments>
+                                            <segment title="" image="angled.png"/>
+                                            <segment title="" image="curved.png"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-sE-bIU">
+                                        <rect key="frame" x="8" y="84" width="584" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwg-BF-4xK" userLabel="Background Color Button" customClass="ColorWellButton">
+                                                <rect key="frame" x="277" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naR-I0-mRc" userLabel="Left Line Color Button" customClass="ColorWellButton">
+                                                <rect key="frame" x="239" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-fN-iQI" userLabel="Right Line Color Button" customClass="ColorWellButton">
+                                                <rect key="frame" x="315" y="0.0" width="223" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-IG-wFL" userLabel="Right Outlier Color Button" customClass="ColorWellButton">
+                                                <rect key="frame" x="546" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sj-eL-Fha" userLabel="Left Outlier Color Button" customClass="ColorWellButton">
+                                                <rect key="frame" x="8" y="0.0" width="223" height="30"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="6Kc-IG-wFL" firstAttribute="leading" secondItem="PnK-fN-iQI" secondAttribute="trailing" constant="8" id="2qe-s0-h92"/>
+                                            <constraint firstItem="Fwg-BF-4xK" firstAttribute="leading" secondItem="naR-I0-mRc" secondAttribute="trailing" constant="8" id="8Ad-gG-Mam"/>
+                                            <constraint firstItem="9Sj-eL-Fha" firstAttribute="leading" secondItem="NmP-sE-bIU" secondAttribute="leading" constant="8" id="FKr-ky-RZt"/>
+                                            <constraint firstAttribute="centerY" secondItem="PnK-fN-iQI" secondAttribute="centerY" id="IIn-zc-GNG"/>
+                                            <constraint firstAttribute="centerY" secondItem="6Kc-IG-wFL" secondAttribute="centerY" id="Jny-hg-Sgr"/>
+                                            <constraint firstAttribute="centerX" secondItem="Fwg-BF-4xK" secondAttribute="centerX" id="LZ0-w5-oNq"/>
+                                            <constraint firstItem="naR-I0-mRc" firstAttribute="leading" secondItem="9Sj-eL-Fha" secondAttribute="trailing" constant="8" id="Oms-Jw-uw1"/>
+                                            <constraint firstItem="PnK-fN-iQI" firstAttribute="leading" secondItem="Fwg-BF-4xK" secondAttribute="trailing" constant="8" id="S4S-NU-1Tb"/>
+                                            <constraint firstAttribute="centerY" secondItem="9Sj-eL-Fha" secondAttribute="centerY" id="YYv-UH-Bcd"/>
+                                            <constraint firstAttribute="height" constant="30" id="YgD-QS-XSR"/>
+                                            <constraint firstAttribute="centerY" secondItem="naR-I0-mRc" secondAttribute="centerY" id="d4s-G4-V72"/>
+                                            <constraint firstAttribute="centerY" secondItem="Fwg-BF-4xK" secondAttribute="centerY" id="dZQ-SA-CvQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Kc-IG-wFL" secondAttribute="trailing" constant="8" id="mkq-Se-y1F"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edt-Zr-L70">
+                                        <rect key="frame" x="8" y="130" width="22" height="22"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-dY-ZbB" customClass="APSegmentedControl">
+                                        <rect key="frame" x="464" y="122" width="128" height="29"/>
+                                        <segments>
+                                            <segment title="" image="loop.png"/>
+                                            <segment title="" image="grid.png"/>
+                                            <segment title="" image="background-image.png"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NmP-sE-bIU" firstAttribute="top" secondItem="afh-zp-Mdm" secondAttribute="bottom" constant="8" id="1oM-md-Plg"/>
+                                    <constraint firstItem="afh-zp-Mdm" firstAttribute="leading" secondItem="FZY-F0-6ME" secondAttribute="leading" constant="-13" id="2FQ-sM-Wbo"/>
+                                    <constraint firstItem="afh-zp-Mdm" firstAttribute="top" secondItem="FsF-7i-Hu3" secondAttribute="bottom" constant="8" id="3sf-xt-ZWa"/>
+                                    <constraint firstAttribute="height" constant="180" id="5KY-qR-X7f"/>
+                                    <constraint firstItem="FsF-7i-Hu3" firstAttribute="leading" secondItem="FZY-F0-6ME" secondAttribute="leading" id="D93-PF-X7I"/>
+                                    <constraint firstItem="cHL-dY-ZbB" firstAttribute="top" secondItem="NmP-sE-bIU" secondAttribute="bottom" constant="8" id="Ehz-4M-ctH"/>
+                                    <constraint firstItem="FsF-7i-Hu3" firstAttribute="top" secondItem="FZY-F0-6ME" secondAttribute="top" constant="6" id="JJx-6c-2Ee"/>
+                                    <constraint firstAttribute="trailing" secondItem="PEp-WS-1Ie" secondAttribute="trailing" constant="8" id="KJe-EI-xg4"/>
+                                    <constraint firstItem="0KM-KA-Vg6" firstAttribute="top" secondItem="9Sj-eL-Fha" secondAttribute="bottom" constant="12" id="MEl-cs-bFp"/>
+                                    <constraint firstItem="c0d-b2-pPe" firstAttribute="top" secondItem="PEp-WS-1Ie" secondAttribute="bottom" constant="8" id="NKd-PL-2Cp"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHL-dY-ZbB" secondAttribute="trailing" constant="8" id="NeJ-Dq-v3U"/>
+                                    <constraint firstItem="edt-Zr-L70" firstAttribute="leading" secondItem="FZY-F0-6ME" secondAttribute="leading" constant="8" id="NlY-Us-YBo"/>
+                                    <constraint firstItem="0KM-KA-Vg6" firstAttribute="leading" secondItem="edt-Zr-L70" secondAttribute="trailing" constant="14" id="ON7-PX-LUI"/>
+                                    <constraint firstAttribute="trailing" secondItem="c0d-b2-pPe" secondAttribute="trailing" constant="8" id="Raf-Kg-T6g"/>
+                                    <constraint firstItem="PEp-WS-1Ie" firstAttribute="width" secondItem="FsF-7i-Hu3" secondAttribute="width" constant="-1" id="Svv-57-P9G"/>
+                                    <constraint firstItem="c0d-b2-pPe" firstAttribute="top" secondItem="afh-zp-Mdm" secondAttribute="top" id="Uud-ft-Qfz"/>
+                                    <constraint firstItem="0KM-KA-Vg6" firstAttribute="centerY" secondItem="edt-Zr-L70" secondAttribute="centerY" constant="-0.5" id="llx-NG-MEa"/>
+                                    <constraint firstItem="c0d-b2-pPe" firstAttribute="leading" secondItem="afh-zp-Mdm" secondAttribute="trailing" constant="3" id="lp7-XB-7c9"/>
+                                    <constraint firstItem="PEp-WS-1Ie" firstAttribute="top" secondItem="FZY-F0-6ME" secondAttribute="top" constant="6" id="puw-ut-0jk"/>
+                                    <constraint firstItem="afh-zp-Mdm" firstAttribute="width" secondItem="c0d-b2-pPe" secondAttribute="width" constant="14" id="rVN-Zc-tFW"/>
+                                    <constraint firstItem="NmP-sE-bIU" firstAttribute="leading" secondItem="FZY-F0-6ME" secondAttribute="leading" constant="8" id="urZ-Zb-XXG"/>
+                                    <constraint firstItem="PEp-WS-1Ie" firstAttribute="leading" secondItem="FsF-7i-Hu3" secondAttribute="trailing" constant="3" id="xCp-hk-6S6"/>
+                                    <constraint firstAttribute="trailing" secondItem="NmP-sE-bIU" secondAttribute="trailing" constant="8" id="zEO-q3-j2y"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S55-7k-NUh">
+                                <rect key="frame" x="0.0" y="376" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="7im-CW-oBB"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gqc-nt-40m"/>
+                                    <barButtonItem systemItem="reply" id="WhU-lg-z4n"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Crp-CH-GPZ"/>
+                                    <barButtonItem systemItem="trash" id="8Bq-o5-uwv"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="QlU-YQ-mLI"/>
+                                    <barButtonItem image="gear.png" id="hNm-qU-5eN"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FZY-F0-6ME" secondAttribute="bottom" id="4Cn-2w-vUL"/>
+                            <constraint firstItem="FZY-F0-6ME" firstAttribute="top" secondItem="S55-7k-NUh" secondAttribute="bottom" id="DPq-b9-LIE"/>
+                            <constraint firstItem="S55-7k-NUh" firstAttribute="trailing" secondItem="FZY-F0-6ME" secondAttribute="trailing" id="K3r-Mx-8l0"/>
+                            <constraint firstItem="S55-7k-NUh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nni-7O-qGO"/>
+                            <constraint firstItem="S55-7k-NUh" firstAttribute="leading" secondItem="FZY-F0-6ME" secondAttribute="leading" id="Usu-yd-rIL"/>
+                            <constraint firstItem="FZY-F0-6ME" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Zzg-FT-Cg8"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="angled.png" width="28" height="28"/>
+        <image name="background-image.png" width="28" height="28"/>
+        <image name="curved.png" width="28" height="28"/>
+        <image name="gear.png" width="20" height="20"/>
+        <image name="grid.png" width="22" height="22"/>
+        <image name="loop.png" width="28" height="28"/>
+        <image name="many-lines.png" width="32" height="32"/>
+        <image name="right-line.png" width="32" height="32"/>
+        <image name="thick-line.png" width="32" height="32"/>
+        <image name="thin-line.png" width="32" height="32"/>
+    </resources>
 </document>

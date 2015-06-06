@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CanvasView.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class AP1ViewController;
 
-@property (strong, nonatomic) UIWindow *window;
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
+    CanvasView *canvas;
+    UIWindow *window;
+    AP1ViewController *viewController;
+}
 
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) AP1ViewController *viewController;
 
 @end
-

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
@@ -31,11 +30,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2" customClass="TransparentView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="812"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="775"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="9" userLabel="Settings View">
-                    <rect key="frame" x="0.0" y="568" width="320" height="249"/>
+                    <rect key="frame" x="0.0" y="526" width="320" height="249"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="32" minValue="2" maxValue="128" minimumValueImage="thin-line.png" maximumValueImage="many-lines.png" id="10" userLabel="Line Count Slider">
@@ -194,7 +193,7 @@
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                 </view>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.74999999999999978" contentMode="scaleToFill" barStyle="black" id="3">
-                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="482" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="camera" id="4">
@@ -226,7 +225,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="508" y="380"/>
+            <point key="canvasLocation" x="508" y="382.5"/>
         </view>
         <viewController id="58" userLabel="About View Controller">
             <view key="view" contentMode="scaleToFill" id="59">

@@ -7,16 +7,55 @@
 //
 
 #import "AppDelegate.h"
+#import "AP1ViewController.h"
+#import "TransparentView.h"
+#import "UIColor+rgb.h"
 
-@interface AppDelegate ()
-
-@end
 
 @implementation AppDelegate
 
+@synthesize window;
+@synthesize viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Override point for customization after app launch.
+    
+    [application setStatusBarHidden: YES
+                           animated: YES];
+    viewController = (AP1ViewController *)self.window.rootViewController;
+    NSLog(@"%@",window);
+    NSLog(@"%@",viewController);
+    
+    canvas = [[CanvasView alloc] initWithFrame: window.bounds];
+    canvas.multipleTouchEnabled = YES;
+    canvas.backgroundColor = [UIColor blackColor];
+    ((TransparentView *) viewController.view).forwardingResponder = canvas;
+    ((TransparentView *) viewController.view).forwarding = YES;
+    viewController.canvas = canvas;
+    canvas.lineCount = 32;
+    canvas.lineThickness = 2.0;
+    canvas.leftOutlierCount = 0;
+    canvas.rightOutlierCount = 0;
+    canvas.backgroundColor = [UIColor blackColor];
+    canvas.leftLineColor = [UIColor blueColor];
+    canvas.rightLineColor = [UIColor redColor];
+    canvas.leftOutlierColor = [UIColor whiteColor];
+    canvas.rightOutlierColor = [UIColor whiteColor];
+    
+    [canvas loadCanvasState]; // load saved state, if any, if possible
+    
+    ((TransparentView *) viewController.view).gridColor = [UIColor colorWithRed:0.960 green:0.730 blue:0.730 alpha:1.000];
+    ((TransparentView *) viewController.view).gridWidth = 25.0;
+    ((TransparentView *) viewController.view).isGridOn = NO;
+    canvas.gridWidth = 25.0;
+    canvas.griddedMode = NO;
+    
+    [viewController.view addSubview: canvas];
+//    [window addSubview:viewController.view];
+//    [window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
@@ -26,12 +65,12 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+ 
+    [canvas saveCanvasState];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [canvas loadCanvasState];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -39,7 +78,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [canvas saveCanvasState];
 }
 
 @end
