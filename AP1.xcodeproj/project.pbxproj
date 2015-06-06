@@ -14,6 +14,64 @@
 		647A5EBE1B23A40E0045B305 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EBD1B23A40E0045B305 /* Images.xcassets */; };
 		647A5EC11B23A40E0045B305 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EBF1B23A40E0045B305 /* LaunchScreen.xib */; };
 		647A5ECD1B23A40F0045B305 /* AP1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5ECC1B23A40F0045B305 /* AP1Tests.m */; };
+		647A5F011B23A44F0045B305 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5ED81B23A44F0045B305 /* about.png */; };
+		647A5F021B23A44F0045B305 /* about1.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5ED91B23A44F0045B305 /* about1.png */; };
+		647A5F031B23A44F0045B305 /* angled.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EDA1B23A44F0045B305 /* angled.png */; };
+		647A5F041B23A44F0045B305 /* angled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EDB1B23A44F0045B305 /* angled@2x.png */; };
+		647A5F051B23A44F0045B305 /* Appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EDC1B23A44F0045B305 /* Appicon.png */; };
+		647A5F061B23A44F0045B305 /* background-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EDD1B23A44F0045B305 /* background-image.png */; };
+		647A5F071B23A44F0045B305 /* background-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EDE1B23A44F0045B305 /* background-image@2x.png */; };
+		647A5F081B23A44F0045B305 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EDF1B23A44F0045B305 /* blue.png */; };
+		647A5F091B23A44F0045B305 /* Brightness-small-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE01B23A44F0045B305 /* Brightness-small-white.png */; };
+		647A5F0A1B23A44F0045B305 /* checkbox-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE11B23A44F0045B305 /* checkbox-off.png */; };
+		647A5F0B1B23A44F0045B305 /* checkbox-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE21B23A44F0045B305 /* checkbox-off@2x.png */; };
+		647A5F0C1B23A44F0045B305 /* checkbox-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE31B23A44F0045B305 /* checkbox-on.png */; };
+		647A5F0D1B23A44F0045B305 /* checkbox-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE41B23A44F0045B305 /* checkbox-on@2x.png */; };
+		647A5F0E1B23A44F0045B305 /* curved.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE51B23A44F0045B305 /* curved.png */; };
+		647A5F0F1B23A44F0045B305 /* curved@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE61B23A44F0045B305 /* curved@2x.png */; };
+		647A5F101B23A44F0045B305 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE71B23A44F0045B305 /* Default-568h@2x.png */; };
+		647A5F111B23A44F0045B305 /* few-lines.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE81B23A44F0045B305 /* few-lines.png */; };
+		647A5F121B23A44F0045B305 /* few-lines@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EE91B23A44F0045B305 /* few-lines@2x.png */; };
+		647A5F131B23A44F0045B305 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EEA1B23A44F0045B305 /* gear.png */; };
+		647A5F141B23A44F0045B305 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EEB1B23A44F0045B305 /* gear@2x.png */; };
+		647A5F151B23A44F0045B305 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EEC1B23A44F0045B305 /* green.png */; };
+		647A5F161B23A44F0045B305 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EED1B23A44F0045B305 /* grid.png */; };
+		647A5F171B23A44F0045B305 /* grid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EEE1B23A44F0045B305 /* grid@2x.png */; };
+		647A5F181B23A44F0045B305 /* ipad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EEF1B23A44F0045B305 /* ipad-icon.png */; };
+		647A5F191B23A44F0045B305 /* iphone-4-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF01B23A44F0045B305 /* iphone-4-icon.png */; };
+		647A5F1A1B23A44F0045B305 /* iphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF11B23A44F0045B305 /* iphone-icon.png */; };
+		647A5F1B1B23A44F0045B305 /* itunes-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF21B23A44F0045B305 /* itunes-icon.png */; };
+		647A5F1C1B23A44F0045B305 /* left-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF31B23A44F0045B305 /* left-line.png */; };
+		647A5F1D1B23A44F0045B305 /* left-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF41B23A44F0045B305 /* left-line@2x.png */; };
+		647A5F1E1B23A44F0045B305 /* loop.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF51B23A44F0045B305 /* loop.png */; };
+		647A5F1F1B23A44F0045B305 /* loop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF61B23A44F0045B305 /* loop@2x.png */; };
+		647A5F201B23A44F0045B305 /* many-lines.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF71B23A44F0045B305 /* many-lines.png */; };
+		647A5F211B23A44F0045B305 /* many-lines@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF81B23A44F0045B305 /* many-lines@2x.png */; };
+		647A5F221B23A44F0045B305 /* Opacity-small-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EF91B23A44F0045B305 /* Opacity-small-white.png */; };
+		647A5F231B23A44F0045B305 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EFA1B23A44F0045B305 /* red.png */; };
+		647A5F241B23A44F0045B305 /* right-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EFB1B23A44F0045B305 /* right-line.png */; };
+		647A5F251B23A44F0045B305 /* right-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EFC1B23A44F0045B305 /* right-line@2x.png */; };
+		647A5F261B23A44F0045B305 /* thick-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EFD1B23A44F0045B305 /* thick-line.png */; };
+		647A5F271B23A44F0045B305 /* thick-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EFE1B23A44F0045B305 /* thick-line@2x.png */; };
+		647A5F281B23A44F0045B305 /* thin-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EFF1B23A44F0045B305 /* thin-line.png */; };
+		647A5F291B23A44F0045B305 /* thin-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F001B23A44F0045B305 /* thin-line@2x.png */; };
+		647A5F471B23A4850045B305 /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */; };
+		647A5F481B23A4850045B305 /* AP1AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2C1B23A4850045B305 /* AP1AppDelegate.m */; };
+		647A5F491B23A4850045B305 /* AP1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2D1B23A4850045B305 /* AP1ViewController.m */; };
+		647A5F4A1B23A4850045B305 /* APSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2E1B23A4850045B305 /* APSegmentedControl.m */; };
+		647A5F4B1B23A4850045B305 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2F1B23A4850045B305 /* CanvasView.m */; };
+		647A5F4C1B23A4850045B305 /* CGContextAddRoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F301B23A4850045B305 /* CGContextAddRoundRect.m */; };
+		647A5F4D1B23A4850045B305 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F311B23A4850045B305 /* ColorPickerViewController.m */; };
+		647A5F4E1B23A4850045B305 /* ColorWellButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F321B23A4850045B305 /* ColorWellButton.m */; };
+		647A5F4F1B23A4850045B305 /* ColorWellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F331B23A4850045B305 /* ColorWellView.m */; };
+		647A5F501B23A4850045B305 /* CrosshairView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F341B23A4850045B305 /* CrosshairView.m */; };
+		647A5F511B23A4850045B305 /* RGBSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F351B23A4850045B305 /* RGBSliderView.m */; };
+		647A5F521B23A4850045B305 /* ShakeToEraseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F361B23A4850045B305 /* ShakeToEraseAlertView.m */; };
+		647A5F531B23A4850045B305 /* TransparentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F371B23A4850045B305 /* TransparentView.m */; };
+		647A5F541B23A4850045B305 /* UIColor+rgb.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F381B23A4850045B305 /* UIColor+rgb.m */; };
+		647A5F591B23A4CF0045B305 /* AP1ViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F561B23A4CF0045B305 /* AP1ViewController-iPhone.xib */; };
+		647A5F5A1B23A4CF0045B305 /* AP1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F571B23A4CF0045B305 /* AP1ViewController.xib */; };
+		647A5F5B1B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +98,79 @@
 		647A5EC61B23A40F0045B305 /* AP1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AP1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		647A5ECB1B23A40F0045B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647A5ECC1B23A40F0045B305 /* AP1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AP1Tests.m; sourceTree = "<group>"; };
+		647A5ED81B23A44F0045B305 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		647A5ED91B23A44F0045B305 /* about1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about1.png; sourceTree = "<group>"; };
+		647A5EDA1B23A44F0045B305 /* angled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angled.png; sourceTree = "<group>"; };
+		647A5EDB1B23A44F0045B305 /* angled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angled@2x.png"; sourceTree = "<group>"; };
+		647A5EDC1B23A44F0045B305 /* Appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Appicon.png; sourceTree = "<group>"; };
+		647A5EDD1B23A44F0045B305 /* background-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-image.png"; sourceTree = "<group>"; };
+		647A5EDE1B23A44F0045B305 /* background-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-image@2x.png"; sourceTree = "<group>"; };
+		647A5EDF1B23A44F0045B305 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		647A5EE01B23A44F0045B305 /* Brightness-small-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Brightness-small-white.png"; sourceTree = "<group>"; };
+		647A5EE11B23A44F0045B305 /* checkbox-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-off.png"; sourceTree = "<group>"; };
+		647A5EE21B23A44F0045B305 /* checkbox-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-off@2x.png"; sourceTree = "<group>"; };
+		647A5EE31B23A44F0045B305 /* checkbox-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-on.png"; sourceTree = "<group>"; };
+		647A5EE41B23A44F0045B305 /* checkbox-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-on@2x.png"; sourceTree = "<group>"; };
+		647A5EE51B23A44F0045B305 /* curved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curved.png; sourceTree = "<group>"; };
+		647A5EE61B23A44F0045B305 /* curved@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "curved@2x.png"; sourceTree = "<group>"; };
+		647A5EE71B23A44F0045B305 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		647A5EE81B23A44F0045B305 /* few-lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "few-lines.png"; sourceTree = "<group>"; };
+		647A5EE91B23A44F0045B305 /* few-lines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "few-lines@2x.png"; sourceTree = "<group>"; };
+		647A5EEA1B23A44F0045B305 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		647A5EEB1B23A44F0045B305 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		647A5EEC1B23A44F0045B305 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		647A5EED1B23A44F0045B305 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
+		647A5EEE1B23A44F0045B305 /* grid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid@2x.png"; sourceTree = "<group>"; };
+		647A5EEF1B23A44F0045B305 /* ipad-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-icon.png"; sourceTree = "<group>"; };
+		647A5EF01B23A44F0045B305 /* iphone-4-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-4-icon.png"; sourceTree = "<group>"; };
+		647A5EF11B23A44F0045B305 /* iphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-icon.png"; sourceTree = "<group>"; };
+		647A5EF21B23A44F0045B305 /* itunes-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itunes-icon.png"; sourceTree = "<group>"; };
+		647A5EF31B23A44F0045B305 /* left-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-line.png"; sourceTree = "<group>"; };
+		647A5EF41B23A44F0045B305 /* left-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-line@2x.png"; sourceTree = "<group>"; };
+		647A5EF51B23A44F0045B305 /* loop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loop.png; sourceTree = "<group>"; };
+		647A5EF61B23A44F0045B305 /* loop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loop@2x.png"; sourceTree = "<group>"; };
+		647A5EF71B23A44F0045B305 /* many-lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "many-lines.png"; sourceTree = "<group>"; };
+		647A5EF81B23A44F0045B305 /* many-lines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "many-lines@2x.png"; sourceTree = "<group>"; };
+		647A5EF91B23A44F0045B305 /* Opacity-small-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Opacity-small-white.png"; sourceTree = "<group>"; };
+		647A5EFA1B23A44F0045B305 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		647A5EFB1B23A44F0045B305 /* right-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-line.png"; sourceTree = "<group>"; };
+		647A5EFC1B23A44F0045B305 /* right-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-line@2x.png"; sourceTree = "<group>"; };
+		647A5EFD1B23A44F0045B305 /* thick-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thick-line.png"; sourceTree = "<group>"; };
+		647A5EFE1B23A44F0045B305 /* thick-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thick-line@2x.png"; sourceTree = "<group>"; };
+		647A5EFF1B23A44F0045B305 /* thin-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-line.png"; sourceTree = "<group>"; };
+		647A5F001B23A44F0045B305 /* thin-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-line@2x.png"; sourceTree = "<group>"; };
+		647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerViewController.xib; sourceTree = "<group>"; };
+		647A5F2C1B23A4850045B305 /* AP1AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP1AppDelegate.m; sourceTree = "<group>"; };
+		647A5F2D1B23A4850045B305 /* AP1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP1ViewController.m; sourceTree = "<group>"; };
+		647A5F2E1B23A4850045B305 /* APSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSegmentedControl.m; sourceTree = "<group>"; };
+		647A5F2F1B23A4850045B305 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		647A5F301B23A4850045B305 /* CGContextAddRoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGContextAddRoundRect.m; sourceTree = "<group>"; };
+		647A5F311B23A4850045B305 /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
+		647A5F321B23A4850045B305 /* ColorWellButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorWellButton.m; sourceTree = "<group>"; };
+		647A5F331B23A4850045B305 /* ColorWellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorWellView.m; sourceTree = "<group>"; };
+		647A5F341B23A4850045B305 /* CrosshairView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrosshairView.m; sourceTree = "<group>"; };
+		647A5F351B23A4850045B305 /* RGBSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGBSliderView.m; sourceTree = "<group>"; };
+		647A5F361B23A4850045B305 /* ShakeToEraseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeToEraseAlertView.m; sourceTree = "<group>"; };
+		647A5F371B23A4850045B305 /* TransparentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentView.m; sourceTree = "<group>"; };
+		647A5F381B23A4850045B305 /* UIColor+rgb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+rgb.m"; sourceTree = "<group>"; };
+		647A5F391B23A4850045B305 /* AP1AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP1AppDelegate.h; sourceTree = "<group>"; };
+		647A5F3A1B23A4850045B305 /* AP1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP1ViewController.h; sourceTree = "<group>"; };
+		647A5F3B1B23A4850045B305 /* APSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APSegmentedControl.h; sourceTree = "<group>"; };
+		647A5F3C1B23A4850045B305 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		647A5F3D1B23A4850045B305 /* CGContextAddRoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGContextAddRoundRect.h; sourceTree = "<group>"; };
+		647A5F3E1B23A4850045B305 /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
+		647A5F3F1B23A4850045B305 /* ColorWellButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorWellButton.h; sourceTree = "<group>"; };
+		647A5F401B23A4850045B305 /* ColorWellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorWellView.h; sourceTree = "<group>"; };
+		647A5F411B23A4850045B305 /* CrosshairView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrosshairView.h; sourceTree = "<group>"; };
+		647A5F421B23A4850045B305 /* InvalidPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvalidPoint.h; sourceTree = "<group>"; };
+		647A5F431B23A4850045B305 /* RGBSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGBSliderView.h; sourceTree = "<group>"; };
+		647A5F441B23A4850045B305 /* ShakeToEraseAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeToEraseAlertView.h; sourceTree = "<group>"; };
+		647A5F451B23A4850045B305 /* TransparentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentView.h; sourceTree = "<group>"; };
+		647A5F461B23A4850045B305 /* UIColor+rgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+rgb.h"; sourceTree = "<group>"; };
+		647A5F561B23A4CF0045B305 /* AP1ViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AP1ViewController-iPhone.xib"; sourceTree = "<group>"; };
+		647A5F571B23A4CF0045B305 /* AP1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AP1ViewController.xib; sourceTree = "<group>"; };
+		647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ColorPickerViewController-iPhone.xib"; sourceTree = "<group>"; };
+		647A5F5D1B23A5F90045B305 /* AP1_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AP1_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +219,7 @@
 				647A5EBA1B23A40E0045B305 /* Main.storyboard */,
 				647A5EBD1B23A40E0045B305 /* Images.xcassets */,
 				647A5EBF1B23A40E0045B305 /* LaunchScreen.xib */,
+				647A5ED61B23A4270045B305 /* Previous Files */,
 				647A5EB01B23A40E0045B305 /* Supporting Files */,
 			);
 			path = AP1;
@@ -117,6 +249,118 @@
 				647A5ECB1B23A40F0045B305 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		647A5ED61B23A4270045B305 /* Previous Files */ = {
+			isa = PBXGroup;
+			children = (
+				647A5F5C1B23A5EA0045B305 /* Previous Supp Files */,
+				647A5F551B23A4B00045B305 /* NIBs */,
+				647A5F2A1B23A45A0045B305 /* Classes */,
+				647A5ED71B23A4350045B305 /* Images */,
+			);
+			name = "Previous Files";
+			sourceTree = "<group>";
+		};
+		647A5ED71B23A4350045B305 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				647A5ED81B23A44F0045B305 /* about.png */,
+				647A5ED91B23A44F0045B305 /* about1.png */,
+				647A5EDA1B23A44F0045B305 /* angled.png */,
+				647A5EDB1B23A44F0045B305 /* angled@2x.png */,
+				647A5EDC1B23A44F0045B305 /* Appicon.png */,
+				647A5EDD1B23A44F0045B305 /* background-image.png */,
+				647A5EDE1B23A44F0045B305 /* background-image@2x.png */,
+				647A5EDF1B23A44F0045B305 /* blue.png */,
+				647A5EE01B23A44F0045B305 /* Brightness-small-white.png */,
+				647A5EE11B23A44F0045B305 /* checkbox-off.png */,
+				647A5EE21B23A44F0045B305 /* checkbox-off@2x.png */,
+				647A5EE31B23A44F0045B305 /* checkbox-on.png */,
+				647A5EE41B23A44F0045B305 /* checkbox-on@2x.png */,
+				647A5EE51B23A44F0045B305 /* curved.png */,
+				647A5EE61B23A44F0045B305 /* curved@2x.png */,
+				647A5EE71B23A44F0045B305 /* Default-568h@2x.png */,
+				647A5EE81B23A44F0045B305 /* few-lines.png */,
+				647A5EE91B23A44F0045B305 /* few-lines@2x.png */,
+				647A5EEA1B23A44F0045B305 /* gear.png */,
+				647A5EEB1B23A44F0045B305 /* gear@2x.png */,
+				647A5EEC1B23A44F0045B305 /* green.png */,
+				647A5EED1B23A44F0045B305 /* grid.png */,
+				647A5EEE1B23A44F0045B305 /* grid@2x.png */,
+				647A5EEF1B23A44F0045B305 /* ipad-icon.png */,
+				647A5EF01B23A44F0045B305 /* iphone-4-icon.png */,
+				647A5EF11B23A44F0045B305 /* iphone-icon.png */,
+				647A5EF21B23A44F0045B305 /* itunes-icon.png */,
+				647A5EF31B23A44F0045B305 /* left-line.png */,
+				647A5EF41B23A44F0045B305 /* left-line@2x.png */,
+				647A5EF51B23A44F0045B305 /* loop.png */,
+				647A5EF61B23A44F0045B305 /* loop@2x.png */,
+				647A5EF71B23A44F0045B305 /* many-lines.png */,
+				647A5EF81B23A44F0045B305 /* many-lines@2x.png */,
+				647A5EF91B23A44F0045B305 /* Opacity-small-white.png */,
+				647A5EFA1B23A44F0045B305 /* red.png */,
+				647A5EFB1B23A44F0045B305 /* right-line.png */,
+				647A5EFC1B23A44F0045B305 /* right-line@2x.png */,
+				647A5EFD1B23A44F0045B305 /* thick-line.png */,
+				647A5EFE1B23A44F0045B305 /* thick-line@2x.png */,
+				647A5EFF1B23A44F0045B305 /* thin-line.png */,
+				647A5F001B23A44F0045B305 /* thin-line@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		647A5F2A1B23A45A0045B305 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */,
+				647A5F2C1B23A4850045B305 /* AP1AppDelegate.m */,
+				647A5F2D1B23A4850045B305 /* AP1ViewController.m */,
+				647A5F2E1B23A4850045B305 /* APSegmentedControl.m */,
+				647A5F2F1B23A4850045B305 /* CanvasView.m */,
+				647A5F301B23A4850045B305 /* CGContextAddRoundRect.m */,
+				647A5F311B23A4850045B305 /* ColorPickerViewController.m */,
+				647A5F321B23A4850045B305 /* ColorWellButton.m */,
+				647A5F331B23A4850045B305 /* ColorWellView.m */,
+				647A5F341B23A4850045B305 /* CrosshairView.m */,
+				647A5F351B23A4850045B305 /* RGBSliderView.m */,
+				647A5F361B23A4850045B305 /* ShakeToEraseAlertView.m */,
+				647A5F371B23A4850045B305 /* TransparentView.m */,
+				647A5F381B23A4850045B305 /* UIColor+rgb.m */,
+				647A5F391B23A4850045B305 /* AP1AppDelegate.h */,
+				647A5F3A1B23A4850045B305 /* AP1ViewController.h */,
+				647A5F3B1B23A4850045B305 /* APSegmentedControl.h */,
+				647A5F3C1B23A4850045B305 /* CanvasView.h */,
+				647A5F3D1B23A4850045B305 /* CGContextAddRoundRect.h */,
+				647A5F3E1B23A4850045B305 /* ColorPickerViewController.h */,
+				647A5F3F1B23A4850045B305 /* ColorWellButton.h */,
+				647A5F401B23A4850045B305 /* ColorWellView.h */,
+				647A5F411B23A4850045B305 /* CrosshairView.h */,
+				647A5F421B23A4850045B305 /* InvalidPoint.h */,
+				647A5F431B23A4850045B305 /* RGBSliderView.h */,
+				647A5F441B23A4850045B305 /* ShakeToEraseAlertView.h */,
+				647A5F451B23A4850045B305 /* TransparentView.h */,
+				647A5F461B23A4850045B305 /* UIColor+rgb.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		647A5F551B23A4B00045B305 /* NIBs */ = {
+			isa = PBXGroup;
+			children = (
+				647A5F561B23A4CF0045B305 /* AP1ViewController-iPhone.xib */,
+				647A5F571B23A4CF0045B305 /* AP1ViewController.xib */,
+				647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */,
+			);
+			name = NIBs;
+			sourceTree = "<group>";
+		};
+		647A5F5C1B23A5EA0045B305 /* Previous Supp Files */ = {
+			isa = PBXGroup;
+			children = (
+				647A5F5D1B23A5F90045B305 /* AP1_Prefix.pch */,
+			);
+			name = "Previous Supp Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +443,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647A5F0D1B23A44F0045B305 /* checkbox-on@2x.png in Resources */,
+				647A5F251B23A44F0045B305 /* right-line@2x.png in Resources */,
+				647A5F071B23A44F0045B305 /* background-image@2x.png in Resources */,
+				647A5F1E1B23A44F0045B305 /* loop.png in Resources */,
+				647A5F141B23A44F0045B305 /* gear@2x.png in Resources */,
+				647A5F061B23A44F0045B305 /* background-image.png in Resources */,
+				647A5F051B23A44F0045B305 /* Appicon.png in Resources */,
+				647A5F131B23A44F0045B305 /* gear.png in Resources */,
+				647A5F591B23A4CF0045B305 /* AP1ViewController-iPhone.xib in Resources */,
+				647A5F271B23A44F0045B305 /* thick-line@2x.png in Resources */,
 				647A5EBC1B23A40E0045B305 /* Main.storyboard in Resources */,
+				647A5F281B23A44F0045B305 /* thin-line.png in Resources */,
+				647A5F0A1B23A44F0045B305 /* checkbox-off.png in Resources */,
 				647A5EC11B23A40E0045B305 /* LaunchScreen.xib in Resources */,
+				647A5F1C1B23A44F0045B305 /* left-line.png in Resources */,
+				647A5F5A1B23A4CF0045B305 /* AP1ViewController.xib in Resources */,
+				647A5F0C1B23A44F0045B305 /* checkbox-on.png in Resources */,
+				647A5F191B23A44F0045B305 /* iphone-4-icon.png in Resources */,
+				647A5F201B23A44F0045B305 /* many-lines.png in Resources */,
+				647A5F041B23A44F0045B305 /* angled@2x.png in Resources */,
+				647A5F1D1B23A44F0045B305 /* left-line@2x.png in Resources */,
+				647A5F031B23A44F0045B305 /* angled.png in Resources */,
+				647A5F121B23A44F0045B305 /* few-lines@2x.png in Resources */,
+				647A5F081B23A44F0045B305 /* blue.png in Resources */,
+				647A5F1F1B23A44F0045B305 /* loop@2x.png in Resources */,
+				647A5F181B23A44F0045B305 /* ipad-icon.png in Resources */,
 				647A5EBE1B23A40E0045B305 /* Images.xcassets in Resources */,
+				647A5F101B23A44F0045B305 /* Default-568h@2x.png in Resources */,
+				647A5F211B23A44F0045B305 /* many-lines@2x.png in Resources */,
+				647A5F1B1B23A44F0045B305 /* itunes-icon.png in Resources */,
+				647A5F161B23A44F0045B305 /* grid.png in Resources */,
+				647A5F291B23A44F0045B305 /* thin-line@2x.png in Resources */,
+				647A5F1A1B23A44F0045B305 /* iphone-icon.png in Resources */,
+				647A5F5B1B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib in Resources */,
+				647A5F021B23A44F0045B305 /* about1.png in Resources */,
+				647A5F111B23A44F0045B305 /* few-lines.png in Resources */,
+				647A5F231B23A44F0045B305 /* red.png in Resources */,
+				647A5F0E1B23A44F0045B305 /* curved.png in Resources */,
+				647A5F091B23A44F0045B305 /* Brightness-small-white.png in Resources */,
+				647A5F261B23A44F0045B305 /* thick-line.png in Resources */,
+				647A5F011B23A44F0045B305 /* about.png in Resources */,
+				647A5F151B23A44F0045B305 /* green.png in Resources */,
+				647A5F221B23A44F0045B305 /* Opacity-small-white.png in Resources */,
+				647A5F0B1B23A44F0045B305 /* checkbox-off@2x.png in Resources */,
+				647A5F241B23A44F0045B305 /* right-line.png in Resources */,
+				647A5F471B23A4850045B305 /* ColorPickerViewController.xib in Resources */,
+				647A5F171B23A44F0045B305 /* grid@2x.png in Resources */,
+				647A5F0F1B23A44F0045B305 /* curved@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +508,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647A5F531B23A4850045B305 /* TransparentView.m in Sources */,
+				647A5F4C1B23A4850045B305 /* CGContextAddRoundRect.m in Sources */,
+				647A5F4E1B23A4850045B305 /* ColorWellButton.m in Sources */,
+				647A5F491B23A4850045B305 /* AP1ViewController.m in Sources */,
+				647A5F501B23A4850045B305 /* CrosshairView.m in Sources */,
+				647A5F511B23A4850045B305 /* RGBSliderView.m in Sources */,
 				647A5EB91B23A40E0045B305 /* ViewController.m in Sources */,
+				647A5F481B23A4850045B305 /* AP1AppDelegate.m in Sources */,
+				647A5F4A1B23A4850045B305 /* APSegmentedControl.m in Sources */,
+				647A5F4B1B23A4850045B305 /* CanvasView.m in Sources */,
 				647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */,
+				647A5F541B23A4850045B305 /* UIColor+rgb.m in Sources */,
+				647A5F521B23A4850045B305 /* ShakeToEraseAlertView.m in Sources */,
+				647A5F4D1B23A4850045B305 /* ColorPickerViewController.m in Sources */,
 				647A5EB31B23A40E0045B305 /* main.m in Sources */,
+				647A5F4F1B23A4850045B305 /* ColorWellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +651,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +664,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AP1ViewController">
+            <connections>
+                <outlet property="aboutViewController" destination="58" id="68"/>
+                <outlet property="backgroundColorButton" destination="17" id="35"/>
+                <outlet property="curvedJointControl" destination="20" id="38"/>
+                <outlet property="dontShowAgainButton" destination="76" id="77"/>
+                <outlet property="infoButton" destination="22" id="40"/>
+                <outlet property="leftLineColorButton" destination="16" id="34"/>
+                <outlet property="leftLinesSlider" destination="13" id="31"/>
+                <outlet property="leftOutlierColorButton" destination="15" id="32"/>
+                <outlet property="lineCountSlider" destination="10" id="28"/>
+                <outlet property="lineSizeSlider" destination="11" id="29"/>
+                <outlet property="rightLineColorButton" destination="18" id="36"/>
+                <outlet property="rightLinesSlider" destination="12" id="30"/>
+                <outlet property="rightOutlierColorButton" destination="19" id="37"/>
+                <outlet property="settingsItem" destination="8" id="26"/>
+                <outlet property="settingsView" destination="9" id="27"/>
+                <outlet property="takePictureItem" destination="4" id="25"/>
+                <outlet property="toolbar" destination="3" id="24"/>
+                <outlet property="utilityControl" destination="21" id="39"/>
+                <outlet property="versionLabel" destination="74" id="75"/>
+                <outlet property="view" destination="2" id="23"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2" customClass="TransparentView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="812"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="9" userLabel="Settings View">
+                    <rect key="frame" x="0.0" y="568" width="320" height="249"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="32" minValue="2" maxValue="128" minimumValueImage="thin-line.png" maximumValueImage="many-lines.png" id="10" userLabel="Line Count Slider">
+                            <rect key="frame" x="18" y="20" width="284" height="29"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="lineCountSliderChanged:" destination="-1" eventType="valueChanged" id="52"/>
+                            </connections>
+                        </slider>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.10000000149011612" maxValue="10" minimumValueImage="thin-line.png" maximumValueImage="thick-line.png" id="11" userLabel="Line Thickness Slider">
+                            <rect key="frame" x="18" y="50" width="284" height="29"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="lineSizeSliderChanged:" destination="-1" eventType="valueChanged" id="51"/>
+                            </connections>
+                        </slider>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="64" minimumValueImage="right-line.png" maximumValueImage="many-lines.png" id="12" userLabel="Right Count Slider">
+                            <rect key="frame" x="18" y="80" width="284" height="29"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="rightOutlierSliderChanged:" destination="-1" eventType="valueChanged" id="50"/>
+                            </connections>
+                        </slider>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="64" minimumValueImage="right-line.png" maximumValueImage="many-lines.png" id="13" userLabel="Left Count Slider">
+                            <rect key="frame" x="18" y="110" width="284" height="29"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="leftOutlierSliderChanged:" destination="-1" eventType="valueChanged" id="49"/>
+                            </connections>
+                        </slider>
+                        <view contentMode="scaleToFill" id="14">
+                            <rect key="frame" x="20" y="140" width="280" height="52"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="15" userLabel="Left Outlier Color Button" customClass="ColorWellButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="leftOutlierColorButtonTapped:" destination="-1" eventType="touchUpInside" id="44"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="16" userLabel="Left Color Button" customClass="ColorWellButton">
+                                    <rect key="frame" x="58" y="0.0" width="50" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="leftLineColorButtonTapped:" destination="-1" eventType="touchUpInside" id="45"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="17" userLabel="Background Color Button" customClass="ColorWellButton">
+                                    <rect key="frame" x="116" y="0.0" width="50" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backgroundColorButtonTapped:" destination="-1" eventType="touchUpInside" id="46"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="18" userLabel="Right Color Button" customClass="ColorWellButton">
+                                    <rect key="frame" x="174" y="0.0" width="50" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="rightLineColorButtonTapped:" destination="-1" eventType="touchUpInside" id="47"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="19" userLabel="Right Outlier Color Button" customClass="ColorWellButton">
+                                    <rect key="frame" x="233" y="0.0" width="50" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="rightOutlierColorButtonTapped:" destination="-1" eventType="touchUpInside" id="48"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="20">
+                            <rect key="frame" x="46" y="200" width="105" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="" image="angled.png"/>
+                                <segment title="" image="curved.png"/>
+                            </segments>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="curvedJointControlChanged:" destination="-1" eventType="valueChanged" id="43"/>
+                            </connections>
+                        </segmentedControl>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="21" customClass="APSegmentedControl">
+                            <rect key="frame" x="159" y="200" width="141" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="" image="loop.png"/>
+                                <segment title="" image="grid.png"/>
+                                <segment title="" image="background-image.png"/>
+                            </segments>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="touchDownInUtilityControl:" destination="-1" eventType="touchDown" id="57"/>
+                                <action selector="touchUpOutsideUtilityControl:" destination="-1" eventType="touchUpOutside" id="56"/>
+                                <action selector="utilityControlChanged:" destination="-1" eventType="valueChanged" id="42"/>
+                            </connections>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="22">
+                            <rect key="frame" x="20" y="204" width="22" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="-1" eventType="touchUpInside" id="41"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.74999999999999978" contentMode="scaleToFill" barStyle="black" id="3">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="4">
+                            <connections>
+                                <action selector="takePictureItemTapped:" destination="-1" id="70"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5"/>
+                        <barButtonItem systemItem="reply" id="6">
+                            <connections>
+                                <action selector="undoButtonTapped:" destination="-1" id="55"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="72"/>
+                        <barButtonItem systemItem="trash" id="71">
+                            <connections>
+                                <action selector="trashButtonTapped:" destination="-1" id="73"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7"/>
+                        <barButtonItem image="gear.png" id="8">
+                            <connections>
+                                <action selector="settingsItemTapped:" destination="-1" id="53"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="508" y="380"/>
+        </view>
+        <viewController id="58" userLabel="About View Controller">
+            <view key="view" contentMode="scaleToFill" id="59">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <navigationBar contentMode="scaleToFill" barStyle="black" id="60">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <items>
+                            <navigationItem title="Artonics" id="61">
+                                <barButtonItem key="rightBarButtonItem" systemItem="done" id="62">
+                                    <connections>
+                                        <action selector="aboutDone:" destination="-1" id="69"/>
+                                    </connections>
+                                </barButtonItem>
+                            </navigationItem>
+                        </items>
+                    </navigationBar>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="concept, design, wine:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="63">
+                        <rect key="frame" x="20" y="410" width="157" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="coding and swearing:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="66">
+                        <rect key="frame" x="20" y="439" width="157" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="gordon clyne" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="64">
+                        <rect key="frame" x="185" y="410" width="115" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="casey marshall" lineBreakMode="tailTruncation" minimumFontSize="10" id="65">
+                        <rect key="frame" x="185" y="439" width="115" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="itunes-icon.png" id="67">
+                        <rect key="frame" x="32" y="95" width="256" height="256"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1.1 (XXX)" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="74">
+                        <rect key="frame" x="153" y="57" width="147" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            </view>
+            <extendedEdge key="edgesForExtendedLayout"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <size key="freeformSize" width="320" height="480"/>
+        </viewController>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="76">
+            <rect key="frame" x="0.0" y="0.0" width="213" height="36"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+            <size key="titleShadowOffset" width="0.0" height="-1"/>
+            <state key="normal" title="Don't show this again." image="checkbox-off.png">
+                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <state key="selected" image="checkbox-on.png">
+                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <state key="highlighted">
+                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="dontShowAgainButtonTapped:" destination="-1" eventType="touchUpInside" id="78"/>
+            </connections>
+        </button>
+    </objects>
+    <resources>
+        <image name="angled.png" width="28" height="28"/>
+        <image name="background-image.png" width="28" height="28"/>
+        <image name="checkbox-off.png" width="22" height="22"/>
+        <image name="checkbox-on.png" width="22" height="22"/>
+        <image name="curved.png" width="28" height="28"/>
+        <image name="gear.png" width="20" height="20"/>
+        <image name="grid.png" width="22" height="22"/>
+        <image name="itunes-icon.png" width="512" height="512"/>
+        <image name="loop.png" width="28" height="28"/>
+        <image name="many-lines.png" width="32" height="32"/>
+        <image name="right-line.png" width="32" height="32"/>
+        <image name="thick-line.png" width="32" height="32"/>
+        <image name="thin-line.png" width="32" height="32"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
