@@ -17,22 +17,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZY-F0-6ME" userLabel="Settings View">
-                                <rect key="frame" x="0.0" y="420" width="600" height="180"/>
+                                <rect key="frame" x="0.0" y="600" width="600" height="180"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="32" minValue="1" maxValue="128" continuous="NO" minimumValueImage="thin-line.png" maximumValueImage="many-lines.png" translatesAutoresizingMaskIntoConstraints="NO" id="FsF-7i-Hu3" userLabel="Line Count Slider">
                                         <rect key="frame" x="-2" y="6" width="299" height="32"/>
+                                        <connections>
+                                            <action selector="lineCountSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cKa-Od-gFc"/>
+                                        </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="64" continuous="NO" minimumValueImage="right-line.png" maximumValueImage="many-lines.png" translatesAutoresizingMaskIntoConstraints="NO" id="afh-zp-Mdm" userLabel="Left Lines Slider">
                                         <rect key="frame" x="-15" y="45" width="312" height="32"/>
+                                        <connections>
+                                            <action selector="leftOutlierSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7zF-We-1cQ"/>
+                                        </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="64" continuous="NO" minimumValueImage="right-line.png" maximumValueImage="many-lines.png" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-WS-1Ie" userLabel="Right Lines Slider">
                                         <rect key="frame" x="296" y="6" width="298" height="32"/>
+                                        <connections>
+                                            <action selector="rightOutlierSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sI1-WO-s7d"/>
+                                        </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.10000000149011612" maxValue="10" continuous="NO" minimumValueImage="right-line.png" maximumValueImage="thick-line.png" translatesAutoresizingMaskIntoConstraints="NO" id="c0d-b2-pPe" userLabel="Line Thickness Slider">
                                         <rect key="frame" x="296" y="45" width="298" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="sj9-Ir-P3U"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="lineSizeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LWN-Ug-j5W"/>
+                                        </connections>
                                     </slider>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-KA-Vg6">
                                         <rect key="frame" x="44" y="126" width="85" height="29"/>
@@ -40,6 +52,9 @@
                                             <segment title="" image="angled.png"/>
                                             <segment title="" image="curved.png"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="curvedJointControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fcG-OX-8tV"/>
+                                        </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-sE-bIU">
                                         <rect key="frame" x="8" y="84" width="584" height="30"/>
@@ -55,6 +70,9 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="backgroundColorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dM8-c3-sg0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naR-I0-mRc" userLabel="Left Line Color Button" customClass="ColorWellButton">
                                                 <rect key="frame" x="239" y="0.0" width="30" height="30"/>
@@ -67,6 +85,9 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="leftLineColorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1As-sM-Xap"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-fN-iQI" userLabel="Right Line Color Button" customClass="ColorWellButton">
                                                 <rect key="frame" x="315" y="0.0" width="223" height="30"/>
@@ -79,6 +100,9 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="rightLineColorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UtM-g0-wML"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-IG-wFL" userLabel="Right Outlier Color Button" customClass="ColorWellButton">
                                                 <rect key="frame" x="546" y="0.0" width="30" height="30"/>
@@ -91,6 +115,9 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="rightOutlierColorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79C-FK-nK2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sj-eL-Fha" userLabel="Left Outlier Color Button" customClass="ColorWellButton">
                                                 <rect key="frame" x="8" y="0.0" width="223" height="30"/>
@@ -103,6 +130,9 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="leftOutlierColorButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y80-Ta-r0D"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -132,6 +162,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="infoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PXH-43-skp"/>
+                                        </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-dY-ZbB" customClass="APSegmentedControl">
                                         <rect key="frame" x="464" y="122" width="128" height="29"/>
@@ -140,6 +173,11 @@
                                             <segment title="" image="grid.png"/>
                                             <segment title="" image="background-image.png"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="touchDownInUtilityControl:" destination="BYZ-38-t0r" eventType="touchDown" id="ZkH-fL-wdA"/>
+                                            <action selector="touchUpOutsideUtilityControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Krz-vd-BrI"/>
+                                            <action selector="utilityControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="idc-UY-3JN"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -170,21 +208,37 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S55-7k-NUh">
-                                <rect key="frame" x="0.0" y="376" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="camera" id="7im-CW-oBB"/>
+                                    <barButtonItem systemItem="camera" id="7im-CW-oBB">
+                                        <connections>
+                                            <action selector="takePictureItemTapped:" destination="BYZ-38-t0r" id="k5h-ll-ZaC"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gqc-nt-40m"/>
-                                    <barButtonItem systemItem="reply" id="WhU-lg-z4n"/>
+                                    <barButtonItem systemItem="reply" id="WhU-lg-z4n">
+                                        <connections>
+                                            <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="zwJ-FN-DR7"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Crp-CH-GPZ"/>
-                                    <barButtonItem systemItem="trash" id="8Bq-o5-uwv"/>
+                                    <barButtonItem systemItem="trash" id="8Bq-o5-uwv">
+                                        <connections>
+                                            <action selector="trashButtonTapped:" destination="BYZ-38-t0r" id="5pL-pt-8Tl"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QlU-YQ-mLI"/>
-                                    <barButtonItem image="gear.png" id="hNm-qU-5eN"/>
+                                    <barButtonItem image="gear.png" id="hNm-qU-5eN">
+                                        <connections>
+                                            <action selector="settingsItemTapped:" destination="BYZ-38-t0r" id="IMh-ex-bMe"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FZY-F0-6ME" secondAttribute="bottom" id="4Cn-2w-vUL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FZY-F0-6ME" secondAttribute="bottom" constant="-180" id="4Cn-2w-vUL"/>
                             <constraint firstItem="FZY-F0-6ME" firstAttribute="top" secondItem="S55-7k-NUh" secondAttribute="bottom" id="DPq-b9-LIE"/>
                             <constraint firstItem="S55-7k-NUh" firstAttribute="trailing" secondItem="FZY-F0-6ME" secondAttribute="trailing" id="K3r-Mx-8l0"/>
                             <constraint firstItem="S55-7k-NUh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nni-7O-qGO"/>
@@ -194,6 +248,24 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="backgroundColorButton" destination="Fwg-BF-4xK" id="C6R-Dc-eyr"/>
+                        <outlet property="curvedJointControl" destination="0KM-KA-Vg6" id="5E1-or-eOs"/>
+                        <outlet property="infoButton" destination="edt-Zr-L70" id="HGr-Yd-NWw"/>
+                        <outlet property="leftLineColorButton" destination="naR-I0-mRc" id="nDH-L8-qm3"/>
+                        <outlet property="leftLinesSlider" destination="afh-zp-Mdm" id="eZZ-PT-CO7"/>
+                        <outlet property="leftOutlierColorButton" destination="9Sj-eL-Fha" id="IUP-nC-AOo"/>
+                        <outlet property="lineCountSlider" destination="FsF-7i-Hu3" id="jKb-4m-FT1"/>
+                        <outlet property="lineSizeSlider" destination="c0d-b2-pPe" id="76X-ZG-CE0"/>
+                        <outlet property="rightLineColorButton" destination="PnK-fN-iQI" id="oH1-oL-5AP"/>
+                        <outlet property="rightLinesSlider" destination="PEp-WS-1Ie" id="yPe-Kz-4bC"/>
+                        <outlet property="rightOutlierColorButton" destination="6Kc-IG-wFL" id="dRO-jv-2Jc"/>
+                        <outlet property="settingsItem" destination="hNm-qU-5eN" id="9he-4R-5la"/>
+                        <outlet property="settingsView" destination="FZY-F0-6ME" id="RCo-qo-ifA"/>
+                        <outlet property="takePictureItem" destination="7im-CW-oBB" id="WZq-au-SlS"/>
+                        <outlet property="toolbar" destination="S55-7k-NUh" id="muu-Xy-vJZ"/>
+                        <outlet property="utilityControl" destination="cHL-dY-ZbB" id="Jby-s3-hS7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
