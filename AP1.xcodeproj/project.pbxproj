@@ -69,8 +69,6 @@
 		647A5F521B23A4850045B305 /* ShakeToEraseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F361B23A4850045B305 /* ShakeToEraseAlertView.m */; };
 		647A5F531B23A4850045B305 /* TransparentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F371B23A4850045B305 /* TransparentView.m */; };
 		647A5F541B23A4850045B305 /* UIColor+rgb.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F381B23A4850045B305 /* UIColor+rgb.m */; };
-		647A5F591B23A4CF0045B305 /* AP1ViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F561B23A4CF0045B305 /* AP1ViewController-iPhone.xib */; };
-		647A5F5A1B23A4CF0045B305 /* AP1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F571B23A4CF0045B305 /* AP1ViewController.xib */; };
 		647A5F5B1B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */; };
 /* End PBXBuildFile section */
 
@@ -167,8 +165,6 @@
 		647A5F441B23A4850045B305 /* ShakeToEraseAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeToEraseAlertView.h; sourceTree = "<group>"; };
 		647A5F451B23A4850045B305 /* TransparentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentView.h; sourceTree = "<group>"; };
 		647A5F461B23A4850045B305 /* UIColor+rgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+rgb.h"; sourceTree = "<group>"; };
-		647A5F561B23A4CF0045B305 /* AP1ViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AP1ViewController-iPhone.xib"; sourceTree = "<group>"; };
-		647A5F571B23A4CF0045B305 /* AP1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AP1ViewController.xib; sourceTree = "<group>"; };
 		647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ColorPickerViewController-iPhone.xib"; sourceTree = "<group>"; };
 		647A5F5D1B23A5F90045B305 /* AP1_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AP1_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -348,8 +344,6 @@
 		647A5F551B23A4B00045B305 /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
-				647A5F561B23A4CF0045B305 /* AP1ViewController-iPhone.xib */,
-				647A5F571B23A4CF0045B305 /* AP1ViewController.xib */,
 				647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */,
 			);
 			name = NIBs;
@@ -451,14 +445,12 @@
 				647A5F061B23A44F0045B305 /* background-image.png in Resources */,
 				647A5F051B23A44F0045B305 /* Appicon.png in Resources */,
 				647A5F131B23A44F0045B305 /* gear.png in Resources */,
-				647A5F591B23A4CF0045B305 /* AP1ViewController-iPhone.xib in Resources */,
 				647A5F271B23A44F0045B305 /* thick-line@2x.png in Resources */,
 				647A5EBC1B23A40E0045B305 /* Main.storyboard in Resources */,
 				647A5F281B23A44F0045B305 /* thin-line.png in Resources */,
 				647A5F0A1B23A44F0045B305 /* checkbox-off.png in Resources */,
 				647A5EC11B23A40E0045B305 /* LaunchScreen.xib in Resources */,
 				647A5F1C1B23A44F0045B305 /* left-line.png in Resources */,
-				647A5F5A1B23A4CF0045B305 /* AP1ViewController.xib in Resources */,
 				647A5F0C1B23A44F0045B305 /* checkbox-on.png in Resources */,
 				647A5F191B23A44F0045B305 /* iphone-4-icon.png in Resources */,
 				647A5F201B23A44F0045B305 /* many-lines.png in Resources */,
@@ -726,6 +718,7 @@
 				647A5ED21B23A40F0045B305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		647A5ED31B23A40F0045B305 /* Build configuration list for PBXNativeTarget "AP1Tests" */ = {
 			isa = XCConfigurationList;
@@ -734,6 +727,7 @@
 				647A5ED51B23A40F0045B305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
