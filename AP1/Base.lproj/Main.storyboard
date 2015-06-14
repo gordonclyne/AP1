@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZY-F0-6ME" userLabel="Settings View">
-                                <rect key="frame" x="0.0" y="404" width="600" height="196"/>
+                                <rect key="frame" x="0.0" y="600" width="600" height="196"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="32" minValue="1" maxValue="128" minimumValueImage="thin-line.png" maximumValueImage="many-lines.png" translatesAutoresizingMaskIntoConstraints="NO" id="FsF-7i-Hu3" userLabel="Line Count Slider">
                                         <rect key="frame" x="6" y="8" width="588" height="32"/>
@@ -277,7 +277,7 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S55-7k-NUh">
-                                <rect key="frame" x="0.0" y="360" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="7im-CW-oBB">
                                         <connections>
@@ -310,7 +310,7 @@
                         <constraints>
                             <constraint firstItem="FZY-F0-6ME" firstAttribute="trailing" secondItem="S55-7k-NUh" secondAttribute="trailing" id="Jri-Zv-03Z"/>
                             <constraint firstItem="FZY-F0-6ME" firstAttribute="leading" secondItem="S55-7k-NUh" secondAttribute="leading" id="PIM-6v-ria"/>
-                            <constraint firstItem="FZY-F0-6ME" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="YJG-tK-SZl"/>
+                            <constraint firstItem="FZY-F0-6ME" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="196" id="YJG-tK-SZl"/>
                             <constraint firstAttribute="trailing" secondItem="S55-7k-NUh" secondAttribute="trailing" id="bCZ-KA-wHy"/>
                             <constraint firstItem="FZY-F0-6ME" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dUX-Pl-baS"/>
                             <constraint firstItem="FZY-F0-6ME" firstAttribute="top" secondItem="S55-7k-NUh" secondAttribute="bottom" id="vdP-KT-DzR"/>

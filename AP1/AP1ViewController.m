@@ -71,6 +71,26 @@
     return YES;
 }
 
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+        toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        CGRect frame = canvas.frame;
+        frame.origin.x = 0;
+        canvas.frame = frame;
+    }
+    else
+    {
+        CGFloat origin = ABS(self.view.frame.size.height - self.view.frame.size.width);
+        CGRect frame = canvas.frame;
+        frame.origin.x = -origin/2;
+        canvas.frame = frame;
+    }
+    
+    
+}
+
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];

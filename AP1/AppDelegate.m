@@ -27,7 +27,15 @@
     NSLog(@"%@",window);
     NSLog(@"%@",viewController);
     
-    canvas = [[CanvasView alloc] initWithFrame: window.bounds];
+    //canvas = [[CanvasView alloc] initWithFrame: window.bounds];
+    CGFloat diff = window.bounds.size.height - window.bounds.size.width;
+    if (diff > 0 ){  // Portrait
+        canvas = [[CanvasView alloc] initWithFrame:CGRectMake(-diff/2, 0, window.bounds.size.width + diff, window.bounds.size.height)];
+    } else {
+        canvas = [[CanvasView alloc] initWithFrame:CGRectMake(0, -diff/2, window.bounds.size.width, window.bounds.size.height + diff)];
+    }
+    
+    
     canvas.multipleTouchEnabled = YES;
     canvas.backgroundColor = [UIColor blackColor];
     ((TransparentView *) viewController.view).forwardingResponder = canvas;
