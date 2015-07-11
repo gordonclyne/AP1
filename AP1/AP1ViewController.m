@@ -73,18 +73,22 @@
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
+    CGFloat origin = ABS(self.view.frame.size.height - self.view.frame.size.width);
+    
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
         toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
         CGRect frame = canvas.frame;
         frame.origin.x = 0;
+        frame.origin.y = -origin/2;
         canvas.frame = frame;
     }
     else
     {
-        CGFloat origin = ABS(self.view.frame.size.height - self.view.frame.size.width);
+        
         CGRect frame = canvas.frame;
         frame.origin.x = -origin/2;
+        frame.origin.y = 0;
         canvas.frame = frame;
     }
     

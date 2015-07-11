@@ -279,6 +279,8 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S55-7k-NUh">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="action" id="jEd-At-iRg"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="G38-IP-ynh"/>
                                     <barButtonItem systemItem="camera" id="7im-CW-oBB">
                                         <connections>
                                             <action selector="takePictureItemTapped:" destination="BYZ-38-t0r" id="k5h-ll-ZaC"/>

@@ -718,6 +718,7 @@ classify(CGFloat dx1, CGFloat dy1, CGFloat dx2, CGFloat dy2)
 //    return YES;
 //}
 
+// This is where magic happens:
 - (void) drawRect:(CGRect)rect
 {
     [super drawRect: rect];
@@ -731,21 +732,6 @@ classify(CGFloat dx1, CGFloat dy1, CGFloat dx2, CGFloat dy2)
                                    alpha: 0.5];
     }
     
-    /*if (current != NULL && drawCrosshair)
-    {
-        CGPoint p = current->p2;
-        if (isInvalidCGPoint(current->p2))
-            p = current->p1;
-        
-        const CGPoint xp[] = { CGPointMake(p.x - 12, p.y), CGPointMake(p.x + 12, p.y) };
-        const CGPoint yp[] = { CGPointMake(p.x, p.y - 12), CGPointMake(p.x, p.y + 12) };
-        CGContextSetStrokeColorWithColor(context, [[UIColor lightGrayColor] CGColor]);
-        CGContextSetLineWidth(context, 1.f);
-        CGContextStrokeEllipseInRect(context, CGRectMake(p.x-7, p.y-7, 14, 14));
-        CGContextStrokeLineSegments(context, xp, 2);
-        CGContextStrokeLineSegments(context, yp, 2);
-    }*/
-    
     CGContextSetLineWidth(context, self.lineThickness);
     for (int i = -self.leftOutlierCount; i <= self.lineCount + self.rightOutlierCount; i++)
     {
@@ -753,269 +739,7 @@ classify(CGFloat dx1, CGFloat dy1, CGFloat dx2, CGFloat dy2)
         CGPoint prev1 = CGInvalidPoint;
         CGPoint prev2 = CGInvalidPoint;
                 
-        /*if (self.curvedJoints && [self pathLength] >= 3)
-        {
-            PointEntry *p1 = head;
-            PointEntry *p2 = p1->next;
-            PointEntry *p3 = p2->next;
-            
-            double prev_mc = 0;
-            
-            winding wnd = PosPosPosPos;
-            winding last_wnd = wnd;
-                        
-            while (p3 != NULL)
-            {
-                CGFloat xdv1 = (p1->p2.x - p1->p1.x) / self.lineCount;
-                CGFloat ydv1 = (p1->p2.y - p1->p1.y) / self.lineCount;
-                CGFloat xdv2 = (p2->p2.x - p2->p1.x) / self.lineCount;
-                CGFloat ydv2 = (p2->p2.y - p2->p1.y) / self.lineCount;
-                CGFloat xdv3 = (p3->p2.x - p3->p1.x) / self.lineCount;
-                CGFloat ydv3 = (p3->p2.y - p3->p1.y) / self.lineCount;
-                
-                CGPoint point1 = CGPointMake(p1->p1.x + (i * xdv1), p1->p1.y + (i * ydv1));
-                CGPoint point2 = CGPointMake(p2->p1.x + (i * xdv2), p2->p1.y + (i * ydv2));
-                CGPoint point3 = CGPointMake(p3->p1.x + (i * xdv3), p3->p1.y + (i * ydv3));
-
-                if (p1 == head)
-                    CGPathMoveToPoint(path, NULL, point1.x, point1.y);
-                
-                double ma = (point2.y - point1.y) / (point2.x - point1.x);
-                double mb = (point3.y - point2.y) / (point3.x - point2.x);
-
-                CGFloat dx1 = point2.x - point1.x;
-                CGFloat dy1 = point2.y - point1.y;
-                CGFloat dx2 = point3.x - point2.x;
-                CGFloat dy2 = point3.y - point2.y;
-                
-                last_wnd = wnd;
-                wnd = classify(dx1, dy1, dx2, dy2);
-
-#if defined(DEBUG)
-                NSLog(@"ma=%f %d mb=%f %d", ma, isinf(ma), mb, isinf(mb));
-#endif
-                
-                if ((ma == mb || fabs(ma - mb) < 10e-10 || (isinf(ma) && isinf(mb)))
-                    && (!isinf(ma) && !isinf(mb)))// nearly collinear
-                {
-                    prev_mc = mb;
-                    CGPathAddLineToPoint(path, NULL, point2.x, point2.y);
-#if defined(DEBUG)
-                    if (i == 0)
-                    {
-                        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed: 1.0 green: 1.0 blue: 0.0 alpha: 0.5] CGColor]);
-                        if (p1 == head)
-                        {
-                            CGContextFillRect(context, CGRectMake(point1.x-5, point1.y-5, 10, 10));
-                            CGContextFillRect(context, CGRectMake(point2.x-5, point2.y-5, 10, 10));
-                        }
-                        CGContextFillRect(context, CGRectMake(point3.x-5, point3.y-5, 10, 10));
-                    }
-#endif
-                }
-                else
-                {
-                    CGPoint tp1; // Some point on the tangent line
-                    CGPoint tp2;
-                    CGPoint c;
-                    if (isinf(ma))
-                        c = center_of_circle(point2, point3, point1);
-                    else if (isinf(mb))
-                        c = center_of_circle(point1, point3, point2);
-                    else
-                        c = center_of_circle(point1, point2, point3);
-                    // Slope of the line perpendicular to the line between
-                    // point2 and c.
-                    double mc = - (c.x - point2.x) / (c.y - point2.y);
-                    
-#if defined(DEBUG)
-                    NSLog(@"mc = %f", mc);
-#endif
-                    
-                    // Distance we want our control point to be from the endpoints.
-                    double mag = 0.25 * distance(point1, point2);
-                    
-                    CGPoint cp1;
-                    if (p1 == head)
-                    {
-#if defined(DEBUG)
-                        NSLog(@"--");
-#endif
-                        cp1 = point1;
-                    }
-                    else
-                    {
-#if defined(DEBUG)
-                        NSLog(@"tp1.x=%f dx=%f", point2.x, point2.x - point1.x);
-#endif
-                        double c1 = point1.y - prev_mc * point1.x;
-#if defined(DEBUG)
-                        NSLog(@"c1=%f", c1);
-#endif
-                        if (prev_mc >= 0)
-                        {
-                            if (prev_mc < 1)
-                                tp1.x = self.bounds.size.width + 1;
-                            else
-                                tp1.x = -1;
-                        
-                        }
-                        else
-                        {
-                            if (prev_mc <= -1)
-                                tp1.x = self.bounds.size.width + 1;
-                            else
-                                tp1.x = -1;
-                        }
-                        tp1.y = prev_mc * tp1.x + c1;
-                        double k1 = mag / distance(point1, tp1);
-                        cp1.x = point1.x - k1 * (point1.x - tp1.x);
-                        cp1.y = point1.y - k1 * (point1.y - tp1.y);
-                    }
-                    
-                  
-#if defined(DEBUG)
-                    NSLog(@"tp2.x=%f dx=%f", point3.x, point3.x - point2.x);
-#endif
-                    CGPoint cp2;
-                    double c2 = point2.y - mc * point2.x;
-#if defined(DEBUG)
-                    NSLog(@"c2=%f", c2);
-#endif
-                    if (mc >= 0)
-                    {
-                        if (mc < 1)
-                            tp2.x = self.bounds.size.width + 1;
-                        else
-                            tp2.x = -1;
-                    }
-                    else
-                    {
-                        if (prev_mc > -1)
-                            tp2.x = self.bounds.size.width + 1;
-                        else
-                            tp2.x = -1;
-                    }
-                    tp2.y = mc * tp2.x + c2;
-                    double k2 = mag / distance(point2, tp2);
-                    cp2.x = point2.x - k2 * (point2.x - tp2.x);
-                    cp2.y = point2.y - k2 * (point2.y - tp2.y);
-                    
-#if defined(DEBUG)
-                    NSLog(@"dx1=%f dy1=%f dx2=%f dy2=%f", dx1, dy1, dx2, dy2);
-                    NSLog(@"cp1=(%f, %f) cp2=(%f, %f)", cp1.x, cp1.y, cp2.x, cp2.y);
-                    if (i == 0)
-                    {
-                        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 0.5] CGColor]);
-                        CGContextFillEllipseInRect(context, CGRectMake(tp1.x-5, tp1.y-5, 10, 10));
-                        CGContextFillRect(context, CGRectMake(tp2.x-5, tp2.y-5, 10, 10));
-                        CGContextSetStrokeColorWithColor(context, [[UIColor redColor] CGColor]);
-                        CGContextMoveToPoint(context, tp1.x, tp1.y);
-                        CGContextAddLineToPoint(context, point1.x, point1.y);
-                        CGContextStrokePath(context);
-                        CGContextMoveToPoint(context, tp2.x, tp2.y);
-                        CGContextAddLineToPoint(context, point2.x, point2.y);
-                        CGContextStrokePath(context);
-                        
-                        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed: 1.0 green: 1.0 blue: 0.0 alpha: 0.5] CGColor]);
-                        if (p1 == head)
-                        {
-                            CGContextFillEllipseInRect(context, CGRectMake(point1.x-5, point1.y-5, 10, 10));
-                            CGContextFillEllipseInRect(context, CGRectMake(point2.x-5, point2.y-5, 10, 10));
-                        }
-                        CGContextFillEllipseInRect(context, CGRectMake(point3.x-5, point3.y-5, 10, 10));
-                        CGContextSetFillColorWithColor(context, [[UIColor colorWithWhite: 1.0 alpha: 0.5] CGColor]);
-                        CGContextFillEllipseInRect(context, CGRectMake(cp1.x-5, cp1.y-5, 10, 10));
-                        CGContextFillRect(context, CGRectMake(cp2.x-5, cp2.y-5, 10, 10));
-                        const CGPoint pp1[2] = { point1, cp1 };
-                        const CGPoint pp2[2] = { point2, cp2 };
-                        CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
-                        CGContextSetLineWidth(context, 1.0);
-                        CGContextStrokeLineSegments(context, pp1, 2);
-                        CGContextStrokeLineSegments(context, pp2, 2);
-                        
-                        double r = distance(point2, c);
-                        NSLog(@"r=%f", r);
-                        CGContextSetStrokeColorWithColor(context, [[UIColor colorWithRed: 0 green: 0 blue: 1 alpha:0.5] CGColor]);
-                        CGContextStrokeEllipseInRect(context, CGRectMake(c.x-r, c.y-r, 2*r, 2*r));
-                        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed: 0 green: 0 blue: 1 alpha:0.5] CGColor]);
-                        CGContextFillEllipseInRect(context, CGRectMake(c.x-5, c.y-5, 10, 10));
-                    }
-#endif
-                    
-                    CGPathAddCurveToPoint(path, NULL, cp1.x, cp1.y, cp2.x, cp2.y, point2.x, point2.y);
-                    
-                    prev_mc = mc;
-                }
-
-                p1 = p1->next;
-                p2 = p2->next;
-                p3 = p3->next;
-            }
-            
-            // final point
-            {
-                CGFloat xdv1 = (p1->p2.x - p1->p1.x) / self.lineCount;
-                CGFloat ydv1 = (p1->p2.y - p1->p1.y) / self.lineCount;
-                CGFloat xdv2 = (p2->p2.x - p2->p1.x) / self.lineCount;
-                CGFloat ydv2 = (p2->p2.y - p2->p1.y) / self.lineCount;
-
-                CGPoint point1 = CGPointMake(p1->p1.x + (i * xdv1), p1->p1.y + (i * ydv1));
-                CGPoint point2 = CGPointMake(p2->p1.x + (i * xdv2), p2->p1.y + (i * ydv2));
-                
-                double mag = 0.25 * distance(point1, point2);
-                CGPoint cp1;
-                double c1 = point1.y - prev_mc * point1.x;
-                CGPoint tp1; // Some point on the tangent line
-                CGFloat dx1 = point2.x - point1.x;
-                CGFloat dy1 = point2.y - point1.y;
-                
-                if (prev_mc >= 0)
-                {
-                    if (prev_mc < 1)
-                        tp1.x = self.bounds.size.width + 1;
-                    else
-                        tp1.x = -1;
-                    
-                }
-                else
-                {
-                    if (prev_mc >= -1)
-                        tp1.x = self.bounds.size.width + 1;
-                    else
-                        tp1.x = -1;
-                }
-                tp1.y = prev_mc * tp1.x + c1;
-                double k1 = mag / distance(point1, tp1);
-                cp1.x = point1.x - k1 * (point1.x - tp1.x);
-                cp1.y = point1.y - k1 * (point1.y - tp1.y);
-                CGPathAddCurveToPoint(path, NULL, cp1.x, cp1.y, point2.x, point2.y,
-                                      point2.x, point2.y);
-                
-#if defined(DEBUG)
-                NSLog(@"dx1=%f dy1=%f", dx1, dy1);
-                if (i == 0)
-                {
-                    CGContextSetFillColorWithColor(context, [[UIColor colorWithRed: 0 green: 1 blue: 0 alpha: 0.5] CGColor]);
-                    CGContextFillEllipseInRect(context, CGRectMake(tp1.x-5, tp1.y-5, 10, 10));
-                    CGContextSetStrokeColorWithColor(context, [[UIColor greenColor] CGColor]);
-                    CGContextMoveToPoint(context, tp1.x, tp1.y);
-                    CGContextAddLineToPoint(context, point1.x, point1.y);
-                    CGContextStrokePath(context);
-
-                    CGContextSetFillColorWithColor(context, [[UIColor colorWithWhite: 1.0 alpha: 0.5] CGColor]);
-                    CGContextFillEllipseInRect(context, CGRectMake(cp1.x-5, cp1.y-5, 10, 10));
-                    const CGPoint pp1[2] = { point1, cp1 };
-                    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
-                    CGContextSetLineWidth(context, 1.0);
-                    CGContextStrokeLineSegments(context, pp1, 2);
-                }
-#endif
-            }
-        }
-        else
-         */            
-            
+        
         {
             for (PointEntry *p = head; p != NULL; p = p->next)
             {
@@ -1069,58 +793,13 @@ classify(CGFloat dx1, CGFloat dy1, CGFloat dx2, CGFloat dy2)
                                               toColor: self.rightOutlierColor
                                               atIndex: i - self.lineCount
                                                 steps: self.rightOutlierCount];
-/*#if 0 // defined(DEBUG)
-        if (self.curvedJoints && [self pathLength] >= 3)
-        {
-            if (i == 0)
-            {
-                CGContextSetStrokeColorWithColor(context, [[UIColor redColor] CGColor]);
-                CGContextSetLineWidth(context, 1.0);
-                CGContextAddPath(context, path);
-                CGContextStrokePath(context);
-            }
-            CGPathRelease(path);
-            return;
-        }
-#endif */
-            
+        
         CGContextSetStrokeColorWithColor(context, [lineColor CGColor]);
         CGContextSetLineWidth(context, self.lineThickness);
         CGContextAddPath(context, path);
         CGContextStrokePath(context);
         CGPathRelease(path);
     }
-    
-    /*CGMutablePathRef *paths = (CGMutablePathRef *) malloc(sizeof(CGMutablePathRef) * 32);
-    for (int i = 0; i < 32; i++)
-        paths[i] = CGPathCreateMutable();
-    for (PointEntry *p = head; p != NULL; p = p->next)
-    {
-        if (!isInvalidCGPoint(p->p1) && !isInvalidCGPoint(p->p2))
-        {
-            CGFloat xdv = (p->p2.x - p->p1.x) / 32;
-            CGFloat ydv = (p->p2.y - p->p1.y) / 32;
-            if (p == head)
-            {
-                for (int i = 0; i < 32; i++)
-                    CGPathMoveToPoint(paths[i], NULL, p->p1.x + (i * xdv), p->p1.y + (i * ydv));
-            }
-            else
-            {
-                for (int i = 0; i < 32; i++)
-                    CGPathAddLineToPoint(paths[i], NULL, p->p1.x + (i * xdv), p->p1.y + (i * ydv));
-            }
-        }
-    }
-    CGContextSetStrokeColorWithColor(context, [[UIColor whiteColor] CGColor]);
-    CGContextSetLineWidth(context, 2.f);
-    for (int i = 0; i < 32; i++)
-    {
-        CGContextAddPath(context, paths[i]);
-        CGContextStrokePath(context);
-        CGPathRelease(paths[i]);
-    }
-    free(paths); */
 }
 
 - (void)dealloc
@@ -1328,6 +1007,7 @@ classify(CGFloat dx1, CGFloat dy1, CGFloat dx2, CGFloat dy2)
     crosshairLayer.opacity = 1.0;
 }
 
+int counter = 0;
 - (void) touchesEnded: (NSSet *) touches
             withEvent: (UIEvent *) event
 {
@@ -1337,6 +1017,25 @@ classify(CGFloat dx1, CGFloat dy1, CGFloat dx2, CGFloat dy2)
         for (UITouch *touch in touches)
         {
             CGPoint p = [touch locationInView: self];
+            
+            
+            // For drawing a star
+            /*CGFloat numberOfPointsInStar = 5;
+            CGFloat innerRadius = 100;
+            CGFloat outerRadius = 300;
+            
+            float angle = (counter/2) * M_PI / numberOfPointsInStar;
+            
+            int residue = counter%4;
+            if ((residue == 1 ) || (residue == 2)) {
+                p = CGPointMake(self.center.x + innerRadius + outerRadius*sin(angle), self.center.y + innerRadius*cos(angle));
+            } else {
+                p = CGPointMake(self.center.x + innerRadius + outerRadius*sin(angle), self.center.y + outerRadius*cos(angle));
+            }
+            counter++;*/
+            
+            
+
             
             if (griddedMode)
             {
