@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AP1.xcodeproj">
+      location = "self:/Users/gordonsclyne/Desktop/Artonics1.2/AP1/Artonics.xcodeproj">
    </FileRef>
 </Workspace>

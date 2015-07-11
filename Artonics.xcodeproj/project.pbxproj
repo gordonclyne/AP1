@@ -83,7 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		647A5EAD1B23A40E0045B305 /* AP1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AP1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		647A5EAD1B23A40E0045B305 /* Artonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artonics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647A5EB11B23A40E0045B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647A5EB21B23A40E0045B305 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		647A5EB41B23A40E0045B305 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		647A5EBB1B23A40E0045B305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		647A5EBD1B23A40E0045B305 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		647A5EC01B23A40E0045B305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		647A5EC61B23A40F0045B305 /* AP1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AP1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		647A5EC61B23A40F0045B305 /* ArtonicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtonicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		647A5ECB1B23A40F0045B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647A5ECC1B23A40F0045B305 /* AP1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AP1Tests.m; sourceTree = "<group>"; };
 		647A5ED81B23A44F0045B305 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		647A5F451B23A4850045B305 /* TransparentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentView.h; sourceTree = "<group>"; };
 		647A5F461B23A4850045B305 /* UIColor+rgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+rgb.h"; sourceTree = "<group>"; };
 		647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ColorPickerViewController-iPhone.xib"; sourceTree = "<group>"; };
-		647A5F5D1B23A5F90045B305 /* AP1_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AP1_Prefix.pch; sourceTree = "<group>"; };
+		647A5F5D1B23A5F90045B305 /* Artonics_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artonics_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +199,8 @@
 		647A5EAE1B23A40E0045B305 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				647A5EAD1B23A40E0045B305 /* AP1.app */,
-				647A5EC61B23A40F0045B305 /* AP1Tests.xctest */,
+				647A5EAD1B23A40E0045B305 /* Artonics.app */,
+				647A5EC61B23A40F0045B305 /* ArtonicsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,7 +352,7 @@
 		647A5F5C1B23A5EA0045B305 /* Previous Supp Files */ = {
 			isa = PBXGroup;
 			children = (
-				647A5F5D1B23A5F90045B305 /* AP1_Prefix.pch */,
+				647A5F5D1B23A5F90045B305 /* Artonics_Prefix.pch */,
 			);
 			name = "Previous Supp Files";
 			sourceTree = "<group>";
@@ -360,9 +360,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		647A5EAC1B23A40E0045B305 /* AP1 */ = {
+		647A5EAC1B23A40E0045B305 /* Artonics */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 647A5ED01B23A40F0045B305 /* Build configuration list for PBXNativeTarget "AP1" */;
+			buildConfigurationList = 647A5ED01B23A40F0045B305 /* Build configuration list for PBXNativeTarget "Artonics" */;
 			buildPhases = (
 				647A5EA91B23A40E0045B305 /* Sources */,
 				647A5EAA1B23A40E0045B305 /* Frameworks */,
@@ -372,14 +372,14 @@
 			);
 			dependencies = (
 			);
-			name = AP1;
+			name = Artonics;
 			productName = AP1;
-			productReference = 647A5EAD1B23A40E0045B305 /* AP1.app */;
+			productReference = 647A5EAD1B23A40E0045B305 /* Artonics.app */;
 			productType = "com.apple.product-type.application";
 		};
-		647A5EC51B23A40F0045B305 /* AP1Tests */ = {
+		647A5EC51B23A40F0045B305 /* ArtonicsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 647A5ED31B23A40F0045B305 /* Build configuration list for PBXNativeTarget "AP1Tests" */;
+			buildConfigurationList = 647A5ED31B23A40F0045B305 /* Build configuration list for PBXNativeTarget "ArtonicsTests" */;
 			buildPhases = (
 				647A5EC21B23A40F0045B305 /* Sources */,
 				647A5EC31B23A40F0045B305 /* Frameworks */,
@@ -390,9 +390,9 @@
 			dependencies = (
 				647A5EC81B23A40F0045B305 /* PBXTargetDependency */,
 			);
-			name = AP1Tests;
+			name = ArtonicsTests;
 			productName = AP1Tests;
-			productReference = 647A5EC61B23A40F0045B305 /* AP1Tests.xctest */;
+			productReference = 647A5EC61B23A40F0045B305 /* ArtonicsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -406,6 +406,7 @@
 				TargetAttributes = {
 					647A5EAC1B23A40E0045B305 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = RR4B7R7ECH;
 					};
 					647A5EC51B23A40F0045B305 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -413,7 +414,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 647A5EA81B23A40E0045B305 /* Build configuration list for PBXProject "AP1" */;
+			buildConfigurationList = 647A5EA81B23A40E0045B305 /* Build configuration list for PBXProject "Artonics" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -426,8 +427,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				647A5EAC1B23A40E0045B305 /* AP1 */,
-				647A5EC51B23A40F0045B305 /* AP1Tests */,
+				647A5EAC1B23A40E0045B305 /* Artonics */,
+				647A5EC51B23A40F0045B305 /* ArtonicsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -532,7 +533,7 @@
 /* Begin PBXTargetDependency section */
 		647A5EC81B23A40F0045B305 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 647A5EAC1B23A40E0045B305 /* AP1 */;
+			target = 647A5EAC1B23A40E0045B305 /* Artonics */;
 			targetProxy = 647A5EC71B23A40F0045B305 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -644,12 +645,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
+				GCC_PREFIX_HEADER = AP1/Artonics_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94117751-fe5b-4317-9ac1-9cdf05aabd35";
+				PRODUCT_NAME = Artonics;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -658,12 +661,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
+				GCC_PREFIX_HEADER = AP1/Artonics_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94117751-fe5b-4317-9ac1-9cdf05aabd35";
+				PRODUCT_NAME = Artonics;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -681,7 +686,7 @@
 				);
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ArtonicsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
 			};
 			name = Debug;
@@ -696,7 +701,7 @@
 				);
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ArtonicsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
 			};
 			name = Release;
@@ -704,7 +709,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		647A5EA81B23A40E0045B305 /* Build configuration list for PBXProject "AP1" */ = {
+		647A5EA81B23A40E0045B305 /* Build configuration list for PBXProject "Artonics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				647A5ECE1B23A40F0045B305 /* Debug */,
@@ -713,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		647A5ED01B23A40F0045B305 /* Build configuration list for PBXNativeTarget "AP1" */ = {
+		647A5ED01B23A40F0045B305 /* Build configuration list for PBXNativeTarget "Artonics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				647A5ED11B23A40F0045B305 /* Debug */,
@@ -722,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		647A5ED31B23A40F0045B305 /* Build configuration list for PBXNativeTarget "AP1Tests" */ = {
+		647A5ED31B23A40F0045B305 /* Build configuration list for PBXNativeTarget "ArtonicsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				647A5ED41B23A40F0045B305 /* Debug */,
