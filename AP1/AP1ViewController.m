@@ -71,29 +71,42 @@
     return YES;
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    CGAffineTransform targetRotation = [coordinator targetTransform];
+    CGAffineTransform inverseRotation = CGAffineTransformInvert(targetRotation);
     
-    CGFloat origin = ABS(self.view.frame.size.height - self.view.frame.size.width);
-    
-    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-        toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-    {
-        CGRect frame = canvas.frame;
-        frame.origin.x = 0;
-        frame.origin.y = -origin/2;
-        canvas.frame = frame;
-    }
-    else
-    {
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         
-        CGRect frame = canvas.frame;
-        frame.origin.x = -origin/2;
-        frame.origin.y = 0;
-        canvas.frame = frame;
-    }
-    
-    
+        self.canvas.transform = CGAffineTransformConcat(self.canvas.transform, inverseRotation);
+        
+        self.canvas.frame = self.view.bounds;
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+    }];
 }
+
+//- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    
+//    CGFloat origin = ABS(self.view.frame.size.height - self.view.frame.size.width);
+//    
+//    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+//        toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+//    {
+//        CGRect frame = canvas.frame;
+//        frame.origin.x = 0;
+//        frame.origin.y = -origin/2;
+//        canvas.frame = frame;
+//    }
+//    else
+//    {
+//        
+//        CGRect frame = canvas.frame;
+//        frame.origin.x = -origin/2;
+//        frame.origin.y = 0;
+//        canvas.frame = frame;
+//    }
+//    
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

@@ -649,6 +649,7 @@
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "94117751-fe5b-4317-9ac1-9cdf05aabd35";
 			};
 			name = Debug;
 		};
@@ -662,6 +663,7 @@
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "94117751-fe5b-4317-9ac1-9cdf05aabd35";
 			};
 			name = Release;
 		};
