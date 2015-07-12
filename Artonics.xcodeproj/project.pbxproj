@@ -193,6 +193,7 @@
 		647A5EA41B23A40E0045B305 = {
 			isa = PBXGroup;
 			children = (
+				527082881B52903100680C8A /* handwriting-dakota.ttf */,
 				647A5EAF1B23A40E0045B305 /* AP1 */,
 				647A5EC91B23A40F0045B305 /* AP1Tests */,
 				647A5EAE1B23A40E0045B305 /* Products */,
@@ -462,6 +463,7 @@
 				647A5F041B23A44F0045B305 /* angled@2x.png in Resources */,
 				647A5F1D1B23A44F0045B305 /* left-line@2x.png in Resources */,
 				647A5F031B23A44F0045B305 /* angled.png in Resources */,
+				527082891B52903100680C8A /* handwriting-dakota.ttf in Resources */,
 				647A5F121B23A44F0045B305 /* few-lines@2x.png in Resources */,
 				647A5F081B23A44F0045B305 /* blue.png in Resources */,
 				647A5F1F1B23A44F0045B305 /* loop@2x.png in Resources */,
