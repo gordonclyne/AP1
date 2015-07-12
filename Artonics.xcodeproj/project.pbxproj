@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642000EF1B5163EB001D1F29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642000ED1B5163C9001D1F29 /* Social.framework */; };
 		647A5EB31B23A40E0045B305 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB21B23A40E0045B305 /* main.m */; };
 		647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB51B23A40E0045B305 /* AppDelegate.m */; };
 		647A5EB91B23A40E0045B305 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB81B23A40E0045B305 /* ViewController.m */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		642000ED1B5163C9001D1F29 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		647A5EAD1B23A40E0045B305 /* Artonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artonics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647A5EB11B23A40E0045B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647A5EB21B23A40E0045B305 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642000EF1B5163EB001D1F29 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +227,7 @@
 		647A5EB01B23A40E0045B305 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				642000ED1B5163C9001D1F29 /* Social.framework */,
 				647A5EB11B23A40E0045B305 /* Info.plist */,
 				647A5EB21B23A40E0045B305 /* main.m */,
 			);
@@ -687,7 +691,7 @@
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArtonicsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Artonics.app/Artonics";
 			};
 			name = Debug;
 		};
@@ -702,7 +706,7 @@
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArtonicsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Artonics.app/Artonics";
 			};
 			name = Release;
 		};

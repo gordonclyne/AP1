@@ -14,6 +14,7 @@
 #import "ShakeToEraseAlertView.h"
 #import "UIColor+rgb.h"
 #import <MessageUI/MessageUI.h>
+#import <Social/Social.h>
 //#import "hpdf.h"
 
 @implementation AP1ViewController
@@ -80,6 +81,7 @@
         self.canvas.transform = CGAffineTransformConcat(self.canvas.transform, inverseRotation);
         
         self.canvas.frame = self.view.bounds;
+        
     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
     }];
 }
@@ -187,6 +189,7 @@
                                 NSLocalizedString(@"Save High-res PNG", @"Save High-res PNG"),
                                 NSLocalizedString(@"Save as PDF", @"save as pdf"),
 								NSLocalizedString(@"Print", @"Print"),
+                                NSLocalizedString(@"Share on Facebook", @"Facebook"),
 								nil];
     else if (sysversion >= 3.19)
         saveImageActionSheet = [[UIActionSheet alloc] initWithTitle: nil
@@ -776,6 +779,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
 	// 3 Save Hi Res
     // 4 Save as PDF
 	// 5 Print
+    // 6 Share on Facebook
 	int realButtonIndex = buttonIndex - [sheet firstOtherButtonIndex];
     
 	NSLog(@"button index: %d real button index: %d", buttonIndex, realButtonIndex);
@@ -831,7 +835,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
             UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
-            if (realButtonIndex == 0 || realButtonIndex == 3)
+            if (realButtonIndex == 0 || realButtonIndex == 3 || realButtonIndex == 6)
             {
                 saveImageView = [[UIImageView alloc] initWithImage: image];
                 saveImageView.frame = self.view.bounds;
@@ -892,6 +896,13 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
                           atomically: NO];
                 
                 ;                [self image: image didFinishSavingWithError: nil contextInfo: NULL];
+            }
+            else if (realButtonIndex == 6)
+            {
+                SLComposeViewController *shareToFacebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                [shareToFacebook setInitialText:@"created with Artonics"];
+                [shareToFacebook addImage:image];
+                [self presentViewController:shareToFacebook animated:YES completion:nil];
             }
         }
 		else // Save PDF or print.

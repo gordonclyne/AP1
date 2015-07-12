@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="TransparentView">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="TransparentView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -308,7 +308,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FZY-F0-6ME" firstAttribute="trailing" secondItem="S55-7k-NUh" secondAttribute="trailing" id="Jri-Zv-03Z"/>
                             <constraint firstItem="FZY-F0-6ME" firstAttribute="leading" secondItem="S55-7k-NUh" secondAttribute="leading" id="PIM-6v-ria"/>
