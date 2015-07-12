@@ -15,11 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="2O0-QU-ao9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="2O0-QU-ao9">
                     <rect key="frame" x="-4" y="0.0" width="488" height="480"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artonics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRg-VG-idx">
-                    <rect key="frame" x="128" y="199" width="233" height="81"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artonics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRg-VG-idx">
+                    <rect key="frame" x="140" y="208" width="210" height="63"/>
                     <fontDescription key="fontDescription" name="Dakota" family="Dakota" pointSize="42"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -38,7 +38,13 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H6F-Il-8iY"/>
+                <constraint firstAttribute="centerY" secondItem="fRg-VG-idx" secondAttribute="centerY" constant="0.5" id="hce-CX-aiu"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="15" id="ko4-tY-EJG"/>
+                <constraint firstItem="2O0-QU-ao9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-4" id="pzW-Bt-dEn"/>
+                <constraint firstItem="2O0-QU-ao9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tFe-yj-JOi"/>
+                <constraint firstAttribute="trailing" secondItem="2O0-QU-ao9" secondAttribute="trailing" constant="-4" id="v8J-5d-0Vq"/>
+                <constraint firstAttribute="centerX" secondItem="fRg-VG-idx" secondAttribute="centerX" constant="-4.5" id="xHO-Qq-kup"/>
+                <constraint firstAttribute="bottom" secondItem="2O0-QU-ao9" secondAttribute="bottom" id="xlz-ex-NJx"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

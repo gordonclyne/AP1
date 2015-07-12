@@ -20,6 +20,8 @@
 @implementation AP1ViewController
 
 @synthesize canvas;
+#define kPaperSizeA4 CGSizeMake(595.2,841.8)
+#define kPaperSizeA2 CGSizeMake(1191,1684)
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -218,7 +220,10 @@
                                            animated: YES];
     else
         [saveImageActionSheet showInView: self.view];
+    
+    saveImageActionSheet.
 }
+
 
 - (IBAction) settingsItemTapped: (id) sender
 {
@@ -713,19 +718,31 @@ didFinishSavingWithError: (NSError *) error
     [UIView commitAnimations];
 }
 
-//- (BOOL) drawToPDFFile: (NSString *) filename
-//{
-//    HPDF_Doc doc = HPDF_New(NULL, NULL);
-//    if (!doc)
-//        return NO;
-//    HPDF_Page page1 = HPDF_AddPage(doc);
-//    HPDF_Page_SetWidth(page1, 768);
-//    HPDF_Page_SetHeight(page1, 1024);
-//    [self.canvas drawPDF: page1];
-//    HPDF_SaveToFile(doc, [filename UTF8String]);
-//    HPDF_Free(doc);
-//    return YES;
-//}
+- (BOOL) drawToPDF: (NSString *) filepath
+{
+    // Creates a mutable data object for updating with binary data, like a byte array
+    NSMutableData *pdfData = [NSMutableData data];
+    
+    // Points the pdf converter to the mutable data object and to the UIView to be converted
+    CGRect rect = CGRectMake(0, 0, kPaperSizeA2.width, kPaperSizeA2.height);
+    UIGraphicsBeginPDFContextToData(pdfData, /*rect*/ canvas.bounds, nil);
+    UIGraphicsBeginPDFPage();
+    CGContextRef pdfContext = UIGraphicsGetCurrentContext();
+    
+    
+    // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
+    
+    [canvas.layer renderInContext:pdfContext];
+    
+    // remove PDF rendering context
+    UIGraphicsEndPDFContext();
+    
+    // instructs the mutable data object to write its context to a file on disk
+    [pdfData writeToFile:filepath atomically:YES];
+    NSLog(@"documentDirectoryFileName: %@",filepath);
+    
+    return YES;
+}
 
 - (void) actionSheet: (UIActionSheet *) sheet
 didDismissWithButtonIndex: (NSInteger) buttonIndex
@@ -932,7 +949,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
                 filePath = [NSTemporaryDirectory() stringByAppendingFormat: @"printing.pdf"];
                 [filePath retain];
             }
-            if (![self drawToPDFFile: filePath])
+            if (![self drawToPDF: filePath])
             {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Failed to create PDF"
                                                                 message: @"A PDF of the current drawing could not be created."

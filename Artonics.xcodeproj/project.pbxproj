@@ -169,6 +169,7 @@
 		647A5F461B23A4850045B305 /* UIColor+rgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+rgb.h"; sourceTree = "<group>"; };
 		647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ColorPickerViewController-iPhone.xib"; sourceTree = "<group>"; };
 		647A5F5D1B23A5F90045B305 /* Artonics_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artonics_Prefix.pch; sourceTree = "<group>"; };
+		64BC5CDC1B52C0C80065644B /* handwriting-dakota.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "handwriting-dakota.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +194,6 @@
 		647A5EA41B23A40E0045B305 = {
 			isa = PBXGroup;
 			children = (
-				527082881B52903100680C8A /* handwriting-dakota.ttf */,
 				647A5EAF1B23A40E0045B305 /* AP1 */,
 				647A5EC91B23A40F0045B305 /* AP1Tests */,
 				647A5EAE1B23A40E0045B305 /* Products */,
@@ -228,6 +228,7 @@
 		647A5EB01B23A40E0045B305 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				64BC5CDC1B52C0C80065644B /* handwriting-dakota.ttf */,
 				642000ED1B5163C9001D1F29 /* Social.framework */,
 				647A5EB11B23A40E0045B305 /* Info.plist */,
 				647A5EB21B23A40E0045B305 /* main.m */,
@@ -463,7 +464,6 @@
 				647A5F041B23A44F0045B305 /* angled@2x.png in Resources */,
 				647A5F1D1B23A44F0045B305 /* left-line@2x.png in Resources */,
 				647A5F031B23A44F0045B305 /* angled.png in Resources */,
-				527082891B52903100680C8A /* handwriting-dakota.ttf in Resources */,
 				647A5F121B23A44F0045B305 /* few-lines@2x.png in Resources */,
 				647A5F081B23A44F0045B305 /* blue.png in Resources */,
 				647A5F1F1B23A44F0045B305 /* loop@2x.png in Resources */,
