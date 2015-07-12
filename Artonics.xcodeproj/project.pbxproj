@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527082891B52903100680C8A /* handwriting-dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 527082881B52903100680C8A /* handwriting-dakota.ttf */; };
 		647A5EB31B23A40E0045B305 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB21B23A40E0045B305 /* main.m */; };
 		647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB51B23A40E0045B305 /* AppDelegate.m */; };
 		647A5EB91B23A40E0045B305 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB81B23A40E0045B305 /* ViewController.m */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		527082881B52903100680C8A /* handwriting-dakota.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "handwriting-dakota.ttf"; sourceTree = "<group>"; };
 		647A5EAD1B23A40E0045B305 /* Artonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artonics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647A5EB11B23A40E0045B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647A5EB21B23A40E0045B305 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		647A5EA41B23A40E0045B305 = {
 			isa = PBXGroup;
 			children = (
+				527082881B52903100680C8A /* handwriting-dakota.ttf */,
 				647A5EAF1B23A40E0045B305 /* AP1 */,
 				647A5EC91B23A40F0045B305 /* AP1Tests */,
 				647A5EAE1B23A40E0045B305 /* Products */,
@@ -458,6 +461,7 @@
 				647A5F041B23A44F0045B305 /* angled@2x.png in Resources */,
 				647A5F1D1B23A44F0045B305 /* left-line@2x.png in Resources */,
 				647A5F031B23A44F0045B305 /* angled.png in Resources */,
+				527082891B52903100680C8A /* handwriting-dakota.ttf in Resources */,
 				647A5F121B23A44F0045B305 /* few-lines@2x.png in Resources */,
 				647A5F081B23A44F0045B305 /* blue.png in Resources */,
 				647A5F1F1B23A44F0045B305 /* loop@2x.png in Resources */,
@@ -687,7 +691,7 @@
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArtonicsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Artonics.app/Artonics";
 			};
 			name = Debug;
 		};
@@ -702,7 +706,7 @@
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ArtonicsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Artonics.app/Artonics";
 			};
 			name = Release;
 		};
