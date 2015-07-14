@@ -1021,7 +1021,7 @@ int counter = 0;
             
             
             // For drawing a star
-            /*CGFloat numberOfPointsInStar = 5;
+            CGFloat numberOfPointsInStar = 5;
             CGFloat innerRadius = 100;
             CGFloat outerRadius = 300;
             
@@ -1029,11 +1029,12 @@ int counter = 0;
             
             int residue = counter%4;
             if ((residue == 1 ) || (residue == 2)) {
-                p = CGPointMake(self.center.x + innerRadius + outerRadius*sin(angle), self.center.y + innerRadius*cos(angle));
+                p = CGPointMake(self.center.x + innerRadius*sin(angle), self.center.y + innerRadius*cos(angle));
             } else {
-                p = CGPointMake(self.center.x + innerRadius + outerRadius*sin(angle), self.center.y + outerRadius*cos(angle));
+                p = CGPointMake(self.center.x + outerRadius*sin(angle), self.center.y + outerRadius*cos(angle));
             }
-            counter++;*/
+            
+            counter++;
             
             
 

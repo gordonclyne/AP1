@@ -48,6 +48,16 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    
+    /************ Hidden save to PDF Feature **********/
+    UILongPressGestureRecognizer* lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(createPDF:)];
+    lpgr.minimumPressDuration = 3.0f;
+    lpgr.allowableMovement = 100.0f;
+    UIView *buttonView = [takePictureItem valueForKey:@"view"];
+    [buttonView addGestureRecognizer:lpgr];
+    
+    /**************** Further Setup *****************/
+    
     leftLinesSlider.transform = CGAffineTransformMakeScale(-1.0, 1.0);
     //leftLinesSlider.transform = CGAffineTransformMakeRotation(3.14159);
     
@@ -67,6 +77,7 @@
 	[versionLabel setText: [NSString stringWithFormat: @"%@ (%@)",
 							[bundle objectForInfoDictionaryKey: @"CFBundleShortVersionString"],
 							[bundle objectForInfoDictionaryKey: @"CFBundleVersion"]]];
+    
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -175,6 +186,27 @@
 	return NO;
 }
 
+- (IBAction) shareItemTapped: (id) sender
+{
+
+    shareActionSheet = [[UIActionSheet alloc] initWithTitle: @"Share on..."
+                                                           delegate: self
+                                                  cancelButtonTitle: NSLocalizedString(@"Cancel", @"Cancel")
+                                             destructiveButtonTitle: nil
+                                                  otherButtonTitles:
+                                @"Facebook",
+                                @"Twitter",
+                                @"Instagram",
+                                @"Pinterest",
+                                nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        [shareActionSheet showFromBarButtonItem: shareItem
+                                           animated: YES];
+    else
+        [shareActionSheet showInView: self.view];
+    
+}
+
 - (IBAction) takePictureItemTapped: (id) sender
 {
     CGFloat sysversion = [[[UIDevice currentDevice] systemVersion] floatValue];
@@ -189,31 +221,7 @@
 								NSLocalizedString(@"Email This", @"Email This"),
 								NSLocalizedString(@"Submit to Gallery", @"Submit to Gallery"),
                                 NSLocalizedString(@"Save High-res PNG", @"Save High-res PNG"),
-                                NSLocalizedString(@"Save as PDF", @"save as pdf"),
 								NSLocalizedString(@"Print", @"Print"),
-                                NSLocalizedString(@"Share on Facebook", @"Facebook"),
-								nil];
-    else if (sysversion >= 3.19)
-        saveImageActionSheet = [[UIActionSheet alloc] initWithTitle: nil
-                                                           delegate: self
-                                                  cancelButtonTitle: NSLocalizedString(@"Cancel", @"Cancel")
-                                             destructiveButtonTitle: nil
-                                                  otherButtonTitles:
-								NSLocalizedString(@"Save To Photo Library", @"Save To Photo Library"),
-								NSLocalizedString(@"Email This", @"Email This"),
-								NSLocalizedString(@"Submit to Gallery", @"Submit to Gallery"),
-                                NSLocalizedString(@"Save High-res PNG", @"Save High-res PNG"),
-                                NSLocalizedString(@"Save as PDF", @"save as pdf"),
-								nil];
-    else
-        saveImageActionSheet = [[UIActionSheet alloc] initWithTitle: nil
-                                                           delegate: self
-                                                  cancelButtonTitle: NSLocalizedString(@"Cancel", @"Cancel")
-                                             destructiveButtonTitle: nil
-                                                  otherButtonTitles:
-								NSLocalizedString(@"Save To Photo Library", @"Save To Photo Library"),
-								NSLocalizedString(@"Email This", @"Email This"),
-								NSLocalizedString(@"Submit to Gallery", @"Submit to Gallery"),
 								nil];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [saveImageActionSheet showFromBarButtonItem: takePictureItem
@@ -221,7 +229,6 @@
     else
         [saveImageActionSheet showInView: self.view];
     
-    saveImageActionSheet.
 }
 
 
@@ -718,35 +725,122 @@ didFinishSavingWithError: (NSError *) error
     [UIView commitAnimations];
 }
 
-- (BOOL) drawToPDF: (NSString *) filepath
+- (void) createPDF:(UILongPressGestureRecognizer*)sender
 {
-    // Creates a mutable data object for updating with binary data, like a byte array
-    NSMutableData *pdfData = [NSMutableData data];
-    
-    // Points the pdf converter to the mutable data object and to the UIView to be converted
-    CGRect rect = CGRectMake(0, 0, kPaperSizeA2.width, kPaperSizeA2.height);
-    UIGraphicsBeginPDFContextToData(pdfData, /*rect*/ canvas.bounds, nil);
-    UIGraphicsBeginPDFPage();
-    CGContextRef pdfContext = UIGraphicsGetCurrentContext();
-    
-    
-    // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
-    
-    [canvas.layer renderInContext:pdfContext];
-    
-    // remove PDF rendering context
-    UIGraphicsEndPDFContext();
-    
-    // instructs the mutable data object to write its context to a file on disk
-    [pdfData writeToFile:filepath atomically:YES];
-    NSLog(@"documentDirectoryFileName: %@",filepath);
-    
-    return YES;
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        __block NSString *filePath = nil;
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        [fmt autorelease];
+        [fmt setDateFormat: @"yyyy-MM-dd HH:mm"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        NSString *base = [fmt stringFromDate: [NSDate date]];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:
+                          [base stringByAppendingString: @".pdf"]];
+        int i = 0;
+        while ([fm fileExistsAtPath: path])
+        {
+            i++;
+            path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:
+                    [NSString stringWithFormat: @"%@ (%d).pdf", base, i]];
+        }
+        filePath = path;
+        
+        [self drawToPDF: filePath];
+    }
+}
+
+- (BOOL) drawToPDF: (NSString *) filepath
+    {
+        // Creates a mutable data object for updating with binary data, like a byte array
+        NSMutableData *pdfData = [NSMutableData data];
+        
+        // Points the pdf converter to the mutable data object and to the UIView to be converted
+        UIGraphicsBeginPDFContextToData(pdfData, /*rect*/ canvas.bounds, nil);
+        UIGraphicsBeginPDFPage();
+        CGContextRef pdfContext = UIGraphicsGetCurrentContext();
+        
+        
+        // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
+        
+        [canvas.layer renderInContext:pdfContext];
+        
+        // remove PDF rendering context
+        UIGraphicsEndPDFContext();
+        
+        // instructs the mutable data object to write its context to a file on disk
+        [pdfData writeToFile:filepath atomically:YES];
+        NSLog(@"documentDirectoryFileName: %@",filepath);
+        
+        return YES;
 }
 
 - (void) actionSheet: (UIActionSheet *) sheet
 didDismissWithButtonIndex: (NSInteger) buttonIndex
 {
+    if (sheet == shareActionSheet){
+        // 0 Facebook
+        // 1 Twitter
+        // 2 Instagram
+        // 3 Pinterest
+        
+        CGFloat imgWidth = canvas.bounds.size.width;
+        CGFloat imgHeight = canvas.bounds.size.height;
+        CGFloat scale = 1.0;
+        if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft
+            || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)
+            UIGraphicsBeginImageContextWithOptions(CGSizeMake(imgHeight, imgWidth), NO, scale);
+        else
+            UIGraphicsBeginImageContextWithOptions(CGSizeMake(imgWidth, imgHeight), NO, scale);
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
+        switch ([[UIDevice currentDevice] orientation])
+        {
+            case UIDeviceOrientationPortraitUpsideDown:
+                CGContextRotateCTM(ctx, 3.14159);
+                CGContextTranslateCTM(ctx, -imgWidth, -imgHeight);
+                break;
+            case UIDeviceOrientationLandscapeLeft:
+                //NSLog(@"landscape left");
+                CGContextRotateCTM(ctx, -3.14159 / 2);
+                CGContextTranslateCTM(ctx, -imgWidth, 0);
+                break;
+            case UIDeviceOrientationLandscapeRight:
+                //NSLog(@"landscape right");
+                CGContextRotateCTM(ctx, 3.14159 / 2);
+                CGContextTranslateCTM(ctx, 0, -imgHeight);
+                break;
+        }
+        [canvas.layer renderInContext: ctx];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        saveImageView = [[UIImageView alloc] initWithImage: image];
+        saveImageView.frame = self.view.bounds;
+        saveImageView.contentMode = UIViewContentModeScaleToFill;
+        //[self.view addSubview: saveImageView];
+        
+        switch (buttonIndex) {
+            case 0:
+                ;
+                SLComposeViewController *shareToFacebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                [shareToFacebook setInitialText:@"Created with Artonics"];
+                [shareToFacebook addImage:image];
+                [self presentViewController:shareToFacebook animated:YES completion:nil];
+                break;
+                
+            case 1:
+                ;SLComposeViewController *shareToTwitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                [shareToTwitter setInitialText:@"Created with Artonics"];
+                [shareToTwitter addImage:image];
+                [self presentViewController:shareToTwitter animated:YES completion:nil];
+                
+            default:
+                break;
+        }
+        
+        return;
+    }
+    
     if (sheet == imageSourceActionSheet)
     {
         NSInteger cancelIndex = [sheet cancelButtonIndex];
@@ -794,16 +888,14 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
 	// 1 Email this
 	// 2 Submit to gallery
 	// 3 Save Hi Res
-    // 4 Save as PDF
-	// 5 Print
-    // 6 Share on Facebook
+	// 4 Print
 	int realButtonIndex = buttonIndex - [sheet firstOtherButtonIndex];
     
 	NSLog(@"button index: %d real button index: %d", buttonIndex, realButtonIndex);
 	
     if (buttonIndex != [sheet cancelButtonIndex])
     {
-        if (realButtonIndex != 4 && realButtonIndex != 5)
+        if (realButtonIndex != 4)
         {
             canvas.drawCrosshair = NO;
             CGFloat imgWidth = canvas.bounds.size.width;
@@ -852,7 +944,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
             UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
-            if (realButtonIndex == 0 || realButtonIndex == 3 || realButtonIndex == 6)
+            if (realButtonIndex == 0 || realButtonIndex == 3 )
             {
                 saveImageView = [[UIImageView alloc] initWithImage: image];
                 saveImageView.frame = self.view.bounds;
@@ -914,41 +1006,15 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
                 
                 ;                [self image: image didFinishSavingWithError: nil contextInfo: NULL];
             }
-            else if (realButtonIndex == 6)
-            {
-                SLComposeViewController *shareToFacebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-                [shareToFacebook setInitialText:@"created with Artonics"];
-                [shareToFacebook addImage:image];
-                [self presentViewController:shareToFacebook animated:YES completion:nil];
-            }
         }
-		else // Save PDF or print.
-		{
+		else // Print.
+        {
             __block NSString *filePath = nil;
-            if (realButtonIndex == 4)
-            {
-                NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-                [fmt autorelease];
-                [fmt setDateFormat: @"yyyy-MM-dd HH:mm"];
-                NSFileManager *fm = [NSFileManager defaultManager];
-                NSString *base = [fmt stringFromDate: [NSDate date]];
-                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-                NSString *path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:
-                                  [base stringByAppendingString: @".pdf"]];
-                int i = 0;
-                while ([fm fileExistsAtPath: path])
-                {
-                    i++;
-                    path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:
-                            [NSString stringWithFormat: @"%@ (%d).pdf", base, i]];
-                }
-                filePath = path;
-            }
-            else
-            {
-                filePath = [NSTemporaryDirectory() stringByAppendingFormat: @"printing.pdf"];
-                [filePath retain];
-            }
+            
+            filePath = [NSTemporaryDirectory() stringByAppendingFormat: @"printing.pdf"];
+            [filePath retain];
+            
+            
             if (![self drawToPDF: filePath])
             {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Failed to create PDF"
@@ -959,32 +1025,6 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
                 [alert show];
                 [alert autorelease];
                 return;
-            }
-            
-            if (realButtonIndex == 4)
-            {
-                if (![[NSUserDefaults standardUserDefaults] boolForKey: @"omit-png-save-alert"])
-                {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"PDF Saved", @"PDF Saved")
-                                                                    message: NSLocalizedString(@"You can retrieve saved  images by using iTunes on your Mac or PC.\n\n ", @"saved msg")
-                                                                   delegate: self
-                                                          cancelButtonTitle: @"OK"
-                                                          otherButtonTitles: nil];
-                    [alert addSubview: dontShowAgainButton];
-                    CGRect alertFrame = CGRectMake(0, 0, 279, 195);
-                    CGRect bbounds = dontShowAgainButton.bounds;
-                    NSLog(@"alertFrame: (%f, %f, %f, %f)", alertFrame.origin.x,
-                          alertFrame.origin.y,
-                          alertFrame.size.width,
-                          alertFrame.size.height);
-                    [dontShowAgainButton setFrame: CGRectMake(alertFrame.size.width/2 - bbounds.size.width/2,
-                                                              alertFrame.size.height/2 - bbounds.size.height/2 + 12,
-                                                              dontShowAgainButton.bounds.size.width,
-                                                              dontShowAgainButton.bounds.size.height)];
-                    //[alert addButtonWithTitle: NSLocalizedString(@"Don't show this again", @"show-again")];
-                    pngSaveAlert = alert;
-                }
-                [pngSaveAlert show];
             }
             else
             {
@@ -1020,34 +1060,6 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
 
         canvas.drawCrosshair = YES;
     }
-    
-    /*
-    else if (buttonIndex == 2)
-    {
-        // Save as PDF.
-        canvas.drawCrosshair = NO;
-        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-        [fmt autorelease];
-        [fmt setDateFormat: @"yyyy-MM-dd HH:mm"];
-        NSFileManager *fm = [NSFileManager defaultManager];
-        NSString *base = [fmt stringFromDate: [NSDate date]];
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:
-                          [base stringByAppendingString: @".pdf"]];
-        int i = 0;
-        while ([fm fileExistsAtPath: path])
-        {
-            i++;
-            path = [[paths objectAtIndex: 0] stringByAppendingPathComponent:
-                    [NSString stringWithFormat: @"%@ (%d).pdf", base, i]];
-        }
-        UIGraphicsBeginPDFContextToFile(path, canvas.bounds, nil);
-        UIGraphicsBeginPDFPage();
-        [canvas.layer renderInContext: UIGraphicsGetCurrentContext()];
-        UIGraphicsEndPDFContext();
-        canvas.drawCrosshair = YES;
-    }
-     */
     
     [saveImageActionSheet release];
     saveImageActionSheet = nil;

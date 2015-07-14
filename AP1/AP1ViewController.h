@@ -41,6 +41,7 @@ typedef enum ColorChooserTarget
     IBOutlet ColorWellButton *leftOutlierColorButton;
     IBOutlet ColorWellButton *rightOutlierColorButton;
     IBOutlet UIToolbar *toolbar;
+    IBOutlet UIBarButtonItem *shareItem;
     IBOutlet UIBarButtonItem *takePictureItem;
     IBOutlet UIBarButtonItem *settingsItem;
     IBOutlet UISegmentedControl *curvedJointControl;
@@ -60,8 +61,8 @@ typedef enum ColorChooserTarget
     
     UIImageView *saveImageView;
     
+    UIActionSheet *shareActionSheet;
     UIActionSheet *imageSourceActionSheet;
-    
     UIActionSheet *saveImageActionSheet;
     UIAlertView *eraseImageAlert;
     

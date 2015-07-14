@@ -279,7 +279,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="S55-7k-NUh">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="action" id="jEd-At-iRg"/>
+                                    <barButtonItem style="plain" systemItem="action" id="jEd-At-iRg">
+                                        <connections>
+                                            <action selector="shareItemTapped:" destination="BYZ-38-t0r" id="yoz-AJ-CzO"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="G38-IP-ynh"/>
                                     <barButtonItem systemItem="camera" id="7im-CW-oBB">
                                         <connections>
@@ -333,6 +337,7 @@
                         <outlet property="rightOutlierColorButton" destination="6Kc-IG-wFL" id="dRO-jv-2Jc"/>
                         <outlet property="settingsItem" destination="hNm-qU-5eN" id="9he-4R-5la"/>
                         <outlet property="settingsView" destination="FZY-F0-6ME" id="RCo-qo-ifA"/>
+                        <outlet property="shareItem" destination="jEd-At-iRg" id="JIC-3h-cZc"/>
                         <outlet property="takePictureItem" destination="7im-CW-oBB" id="WZq-au-SlS"/>
                         <outlet property="toolbar" destination="S55-7k-NUh" id="muu-Xy-vJZ"/>
                         <outlet property="utilityControl" destination="cHL-dY-ZbB" id="Jby-s3-hS7"/>
