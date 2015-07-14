@@ -185,7 +185,7 @@
                                                   cancelButtonTitle: NSLocalizedString(@"Cancel", @"Cancel")
                                              destructiveButtonTitle: nil
                                                   otherButtonTitles:
-								NSLocalizedString(@"Save To Photo Library", @"Save To Photo Library"),
+								NSLocalizedString(@"Save To Photos", @"Save To Photo Library"),
 								NSLocalizedString(@"Email This", @"Email This"),
 								NSLocalizedString(@"Submit to Gallery", @"Submit to Gallery"),
                                 NSLocalizedString(@"Save High-res PNG", @"Save High-res PNG"),
@@ -221,7 +221,6 @@
     else
         [saveImageActionSheet showInView: self.view];
     
-    saveImageActionSheet.
 }
 
 
