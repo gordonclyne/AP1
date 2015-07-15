@@ -78,6 +78,7 @@
 							[bundle objectForInfoDictionaryKey: @"CFBundleShortVersionString"],
 							[bundle objectForInfoDictionaryKey: @"CFBundleVersion"]]];
     
+    
 }
 
 // Override to allow orientations other than the default portrait orientation.

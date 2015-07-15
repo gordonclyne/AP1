@@ -68,8 +68,7 @@
 }
 
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+// Here the grid is drawn
 - (void)drawRect:(CGRect)rect
 {
     if (self.isGridOn)

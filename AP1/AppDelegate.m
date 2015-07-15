@@ -52,9 +52,8 @@
     canvas.gridWidth = 25.0;
     canvas.griddedMode = NO;
     
-    [viewController.view addSubview: canvas];
-    [viewController.view sendSubviewToBack:canvas];
-//    [window addSubview:viewController.view];
+    [window addSubview:canvas];
+    [window addSubview:viewController.view];
 //    [window makeKeyAndVisible];
     
     

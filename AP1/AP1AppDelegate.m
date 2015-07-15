@@ -37,7 +37,6 @@
     self.window.rootViewController = mainViewController;
     canvas = [[CanvasView alloc] initWithFrame: window.bounds];
     canvas.multipleTouchEnabled = YES;
-    canvas.backgroundColor = [UIColor blackColor];
     ((TransparentView *) viewController.view).forwardingResponder = canvas;
     ((TransparentView *) viewController.view).forwarding = YES;
     viewController.canvas = canvas;
@@ -61,6 +60,7 @@
     
     //[window addSubview: canvas];
     //[window addSubview:viewController.view];
+    
     [window makeKeyAndVisible];
 
 	return YES;

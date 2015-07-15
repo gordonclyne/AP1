@@ -650,74 +650,6 @@ classify(CGFloat dx1, CGFloat dy1, CGFloat dx2, CGFloat dy2)
     }
 }
 
-//- (BOOL) drawPDF: (HPDF_Page) pdf
-//{
-//    HPDF_Page_SetRGBFill(pdf, [self.backgroundColor redValue], [self.backgroundColor greenValue], [self.backgroundColor blueValue]);
-//    HPDF_Page_Rectangle(pdf, 0, 0, HPDF_Page_GetWidth(pdf), HPDF_Page_GetHeight(pdf));
-//    HPDF_Page_Fill(pdf);
-//    
-//    HPDF_Page_SetLineWidth(pdf, self.lineThickness);
-//    for (int i = -self.leftOutlierCount; i <= self.lineCount + self.rightOutlierCount; i++)
-//    {
-//        UIColor *lineColor = nil;
-//        if (i < 0)
-//            lineColor = [UIColor interpolateFromColor: self.leftOutlierColor
-//                                              toColor: self.leftLineColor
-//                                              atIndex: self.leftOutlierCount + i
-//                                                steps: self.leftOutlierCount];
-//        if (i >= 0 && i <= self.lineCount)
-//            lineColor = [UIColor interpolateFromColor: self.leftLineColor
-//                                              toColor: self.rightLineColor
-//                                              atIndex: i
-//                                                steps: self.lineCount];
-//        if (i > self.lineCount)
-//            lineColor = [UIColor interpolateFromColor: self.rightLineColor
-//                                              toColor: self.rightOutlierColor
-//                                              atIndex: i - self.lineCount
-//                                                steps: self.rightOutlierCount];
-//
-//        HPDF_Page_SetRGBStroke(pdf, [lineColor redValue], [lineColor greenValue], [lineColor blueValue]);
-//        CGPoint prev1 = CGInvalidPoint;
-//        CGPoint prev2 = CGInvalidPoint;
-//        {
-//            for (PointEntry *p = head; p != NULL; p = p->next)
-//            {
-//                CGFloat xdv = (p->p2.x - p->p1.x) / self.lineCount;
-//                CGFloat ydv = (p->p2.y - p->p1.y) / self.lineCount;
-//                
-//                CGPoint point = CGPointMake(p->p1.x + (i * xdv), p->p1.y + (i * ydv));
-//                
-//                if (!isInvalidCGPoint(p->p1) && !isInvalidCGPoint(p->p2))
-//                {
-//                    if (p == head)
-//                        HPDF_Page_MoveTo(pdf, point.x, point.y);
-//                    else
-//                    {
-//                        /*NSLog(@"curved: %@ && %@ && %@", self.curvedJoints ? @"YES" : @"NO",
-//                         !isInvalidCGPoint(prev1) ? @"YES" : @"NO",
-//                         !isInvalidCGPoint(prev2) ? @"YES" : @"NO");*/
-//                        if (self.curvedJoints && !isInvalidCGPoint(prev1) && !isInvalidCGPoint(prev2))
-//                        {
-//                            CGFloat dx1 = 0.25 * ((prev2.x - prev1.x) + (prev1.x - point.x));
-//                            CGFloat dy1 = 0.25 * ((prev2.y - prev1.y) + (prev1.y - point.y));
-//                            CGPoint cp1 = CGPointMake(prev1.x - dx1, prev1.y - dy1);
-//                            CGPoint cp2 = CGPointMake(point.x + dx1, point.y + dy1);
-//                            /*NSLog(@"add curve (%f, %f) (%f, %f) (%f, %f)", cp1.x, cp1.y,
-//                             cp2.x, cp2.y, point.x, point.y);*/
-//                            HPDF_Page_CurveTo(pdf, cp1.x, cp1.y, cp2.x, cp2.y, point.x, point.y);
-//                        }
-//                        else
-//                            HPDF_Page_LineTo(pdf, point.x, point.y);
-//                    }
-//                }
-//                prev2 = prev1;
-//                prev1 = point;
-//            }
-//            HPDF_Page_Stroke(pdf);
-//        }
-//    }
-//    return YES;
-//}
 
 // This is where magic happens:
 - (void) drawRect:(CGRect)rect
@@ -1021,18 +953,18 @@ int counter = 0;
             
             
             // For drawing a star
-            CGFloat numberOfPointsInStar = 5;
-            CGFloat innerRadius = 100;
-            CGFloat outerRadius = 300;
-            
-            float angle = (counter/2) * M_PI / numberOfPointsInStar;
-            
-            int residue = counter%4;
-            if ((residue == 1 ) || (residue == 2)) {
-                p = CGPointMake(self.center.x + innerRadius*sin(angle), self.center.y + innerRadius*cos(angle));
-            } else {
-                p = CGPointMake(self.center.x + outerRadius*sin(angle), self.center.y + outerRadius*cos(angle));
-            }
+//            CGFloat numberOfPointsInStar = 4;
+//            CGFloat innerRadius = 100;
+//            CGFloat outerRadius = 400;
+//            
+//            float angle = (counter/2) * M_PI / numberOfPointsInStar;
+//            
+//            int residue = counter%4;
+//            if ((residue == 1 ) || (residue == 2)) {
+//                p = CGPointMake(self.center.x + innerRadius*sin(angle), self.center.y + innerRadius*cos(angle));
+//            } else {
+//                p = CGPointMake(self.center.x + outerRadius*sin(angle), self.center.y + outerRadius*cos(angle));
+//            }
             
             counter++;
             
