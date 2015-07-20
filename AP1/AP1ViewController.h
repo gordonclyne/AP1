@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TransparentView.h"
 #import "CanvasView.h"
 #import "ColorWellButton.h"
 #import "ColorWellView.h"
@@ -74,6 +75,7 @@ typedef enum ColorChooserTarget
 }
 
 @property (retain) CanvasView *canvas;
+@property (retain) TransparentView *transparentView;
 
 - (IBAction) takePictureItemTapped: (id) sender;
 - (IBAction) settingsItemTapped: (id) sender;

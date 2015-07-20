@@ -8,13 +8,11 @@
 
 #import "AppDelegate.h"
 #import "AP1ViewController.h"
-#import "TransparentView.h"
 #import "UIColor+rgb.h"
 
 
 @implementation AppDelegate
 
-@synthesize window;
 @synthesize viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -24,15 +22,11 @@
     [application setStatusBarHidden: YES
                            animated: YES];
     viewController = (AP1ViewController *)self.window.rootViewController;
-    NSLog(@"%@",window);
-    NSLog(@"%@",viewController);
     
-    canvas = [[CanvasView alloc] initWithFrame: window.bounds];
+    canvas = [[CanvasView alloc] initWithFrame: _window.bounds];
     
     canvas.multipleTouchEnabled = YES;
     canvas.backgroundColor = [UIColor blackColor];
-    ((TransparentView *) viewController.view).forwardingResponder = canvas;
-    ((TransparentView *) viewController.view).forwarding = YES;
     viewController.canvas = canvas;
     canvas.lineCount = 32;
     canvas.lineThickness = 2.0;
@@ -46,14 +40,11 @@
     
     [canvas loadCanvasState]; // load saved state, if any, if possible
     
-    ((TransparentView *) viewController.view).gridColor = [UIColor colorWithRed:0.960 green:0.730 blue:0.730 alpha:1.000];
-    ((TransparentView *) viewController.view).gridWidth = 25.0;
-    ((TransparentView *) viewController.view).isGridOn = NO;
     canvas.gridWidth = 25.0;
     canvas.griddedMode = NO;
     
-    [window addSubview:canvas];
-    [window addSubview:viewController.view];
+    [viewController.view addSubview: canvas];
+    [viewController.view sendSubviewToBack:canvas];
 //    [window makeKeyAndVisible];
     
     

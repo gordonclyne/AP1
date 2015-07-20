@@ -13,7 +13,6 @@
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
     CanvasView *canvas;
-    UIWindow *window;
     AP1ViewController *viewController;
 }
 

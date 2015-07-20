@@ -10,7 +10,6 @@
 		642000EF1B5163EB001D1F29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642000ED1B5163C9001D1F29 /* Social.framework */; };
 		647A5EB31B23A40E0045B305 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB21B23A40E0045B305 /* main.m */; };
 		647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB51B23A40E0045B305 /* AppDelegate.m */; };
-		647A5EB91B23A40E0045B305 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB81B23A40E0045B305 /* ViewController.m */; };
 		647A5EBC1B23A40E0045B305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EBA1B23A40E0045B305 /* Main.storyboard */; };
 		647A5EBE1B23A40E0045B305 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EBD1B23A40E0045B305 /* Images.xcassets */; };
 		647A5EC11B23A40E0045B305 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EBF1B23A40E0045B305 /* LaunchScreen.xib */; };
@@ -57,7 +56,6 @@
 		647A5F281B23A44F0045B305 /* thin-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5EFF1B23A44F0045B305 /* thin-line.png */; };
 		647A5F291B23A44F0045B305 /* thin-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F001B23A44F0045B305 /* thin-line@2x.png */; };
 		647A5F471B23A4850045B305 /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */; };
-		647A5F481B23A4850045B305 /* AP1AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2C1B23A4850045B305 /* AP1AppDelegate.m */; };
 		647A5F491B23A4850045B305 /* AP1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2D1B23A4850045B305 /* AP1ViewController.m */; };
 		647A5F4A1B23A4850045B305 /* APSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2E1B23A4850045B305 /* APSegmentedControl.m */; };
 		647A5F4B1B23A4850045B305 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2F1B23A4850045B305 /* CanvasView.m */; };
@@ -90,8 +88,6 @@
 		647A5EB21B23A40E0045B305 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		647A5EB41B23A40E0045B305 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		647A5EB51B23A40E0045B305 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		647A5EB71B23A40E0045B305 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		647A5EB81B23A40E0045B305 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		647A5EBB1B23A40E0045B305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		647A5EBD1B23A40E0045B305 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		647A5EC01B23A40E0045B305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 		647A5EFF1B23A44F0045B305 /* thin-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-line.png"; sourceTree = "<group>"; };
 		647A5F001B23A44F0045B305 /* thin-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-line@2x.png"; sourceTree = "<group>"; };
 		647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerViewController.xib; sourceTree = "<group>"; };
-		647A5F2C1B23A4850045B305 /* AP1AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP1AppDelegate.m; sourceTree = "<group>"; };
 		647A5F2D1B23A4850045B305 /* AP1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP1ViewController.m; sourceTree = "<group>"; };
 		647A5F2E1B23A4850045B305 /* APSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSegmentedControl.m; sourceTree = "<group>"; };
 		647A5F2F1B23A4850045B305 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
@@ -153,7 +148,6 @@
 		647A5F361B23A4850045B305 /* ShakeToEraseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeToEraseAlertView.m; sourceTree = "<group>"; };
 		647A5F371B23A4850045B305 /* TransparentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentView.m; sourceTree = "<group>"; };
 		647A5F381B23A4850045B305 /* UIColor+rgb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+rgb.m"; sourceTree = "<group>"; };
-		647A5F391B23A4850045B305 /* AP1AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP1AppDelegate.h; sourceTree = "<group>"; };
 		647A5F3A1B23A4850045B305 /* AP1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP1ViewController.h; sourceTree = "<group>"; };
 		647A5F3B1B23A4850045B305 /* APSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APSegmentedControl.h; sourceTree = "<group>"; };
 		647A5F3C1B23A4850045B305 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
@@ -214,8 +208,6 @@
 			children = (
 				647A5EB41B23A40E0045B305 /* AppDelegate.h */,
 				647A5EB51B23A40E0045B305 /* AppDelegate.m */,
-				647A5EB71B23A40E0045B305 /* ViewController.h */,
-				647A5EB81B23A40E0045B305 /* ViewController.m */,
 				647A5EBA1B23A40E0045B305 /* Main.storyboard */,
 				647A5EBD1B23A40E0045B305 /* Images.xcassets */,
 				647A5EBF1B23A40E0045B305 /* LaunchScreen.xib */,
@@ -316,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */,
-				647A5F2C1B23A4850045B305 /* AP1AppDelegate.m */,
 				647A5F2D1B23A4850045B305 /* AP1ViewController.m */,
 				647A5F2E1B23A4850045B305 /* APSegmentedControl.m */,
 				647A5F2F1B23A4850045B305 /* CanvasView.m */,
@@ -329,7 +320,6 @@
 				647A5F361B23A4850045B305 /* ShakeToEraseAlertView.m */,
 				647A5F371B23A4850045B305 /* TransparentView.m */,
 				647A5F381B23A4850045B305 /* UIColor+rgb.m */,
-				647A5F391B23A4850045B305 /* AP1AppDelegate.h */,
 				647A5F3A1B23A4850045B305 /* AP1ViewController.h */,
 				647A5F3B1B23A4850045B305 /* APSegmentedControl.h */,
 				647A5F3C1B23A4850045B305 /* CanvasView.h */,
@@ -513,8 +503,6 @@
 				647A5F491B23A4850045B305 /* AP1ViewController.m in Sources */,
 				647A5F501B23A4850045B305 /* CrosshairView.m in Sources */,
 				647A5F511B23A4850045B305 /* RGBSliderView.m in Sources */,
-				647A5EB91B23A40E0045B305 /* ViewController.m in Sources */,
-				647A5F481B23A4850045B305 /* AP1AppDelegate.m in Sources */,
 				647A5F4A1B23A4850045B305 /* APSegmentedControl.m in Sources */,
 				647A5F4B1B23A4850045B305 /* CanvasView.m in Sources */,
 				647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */,

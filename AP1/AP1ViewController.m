@@ -10,7 +10,6 @@
 #import "CanvasView.h"
 #import "ColorPickerViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "TransparentView.h"
 #import "ShakeToEraseAlertView.h"
 #import "UIColor+rgb.h"
 #import <MessageUI/MessageUI.h>
@@ -49,6 +48,18 @@
 {
     [super viewDidLoad];
     
+    self.transparentView = [[TransparentView alloc] initWithFrame:self.view.frame];
+    [self.transparentView setBackgroundColor:[UIColor clearColor]];
+    self.transparentView.forwardingResponder = canvas;
+    self.transparentView.forwarding = YES;
+    self.transparentView.gridWidth = 25.0;
+    self.transparentView.isGridOn = NO;
+    self.transparentView.gridColor = [UIColor colorWithRed:0.960 green:0.730 blue:0.730 alpha:1.000];
+    [self.view addSubview:_transparentView];
+    
+    [self.view bringSubviewToFront:settingsView];
+    [self.view bringSubviewToFront:toolbar];
+    
     /************ Hidden save to PDF Feature **********/
     UILongPressGestureRecognizer* lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(createPDF:)];
     lpgr.minimumPressDuration = 3.0f;
@@ -56,7 +67,7 @@
     UIView *buttonView = [takePictureItem valueForKey:@"view"];
     [buttonView addGestureRecognizer:lpgr];
     
-    /**************** Further Setup *****************/
+    /***************** Further Setup *****************/
     
     leftLinesSlider.transform = CGAffineTransformMakeScale(-1.0, 1.0);
     //leftLinesSlider.transform = CGAffineTransformMakeRotation(3.14159);
@@ -267,8 +278,8 @@
         settingsView.transform = CGAffineTransformMakeTranslation(0, -frame.size.height);
         
         [UIView commitAnimations];
-        ((TransparentView *) self.view).forwarding = NO;
-        ((TransparentView *) self.view).forwardingBottomHeight = settingsView.bounds.size.height + toolbar.bounds.size.height;
+        _transparentView.forwarding = NO;
+        _transparentView.forwardingBottomHeight = settingsView.bounds.size.height + toolbar.bounds.size.height;
         showingSettings = YES;
     }
     else
@@ -281,7 +292,7 @@
         settingsView.transform = CGAffineTransformIdentity;
         
         [UIView commitAnimations];
-        ((TransparentView *) self.view).forwarding = YES;
+        _transparentView.forwarding = YES;
         showingSettings = NO;
     }
 }
@@ -548,7 +559,7 @@
 - (IBAction) touchUpOutsideUtilityControl: (id) sender
 {
     // Reset state...
-    if (((TransparentView *) self.view).isGridOn)
+    if (_transparentView.isGridOn)
         [utilityControl setSelectedSegmentIndex: 1];
     // else if (canvas.backgroundImage != nil)
     //   [utilityControl setSelectedSegmentIndex: 2];
@@ -571,7 +582,7 @@
     {
         [canvas closeCurrentPath];
         
-        if (((TransparentView *) self.view).isGridOn)
+        if (_transparentView.isGridOn)
             [utilityControl setSelectedSegmentIndex: 1];
         // else if (canvas.backgroundImage != nil)
         //   [utilityControl setSelectedSegmentIndex: 2];
@@ -581,9 +592,9 @@
     else if ([utilityControl selectedSegmentIndex] == 1)
     {
         // Toggle grid.
-        ((TransparentView *) self.view).isGridOn = !((TransparentView *) self.view).isGridOn;
+        _transparentView.isGridOn = !_transparentView.isGridOn;
         canvas.griddedMode = !canvas.griddedMode;
-        if (!((TransparentView *) self.view).isGridOn)
+        if (!_transparentView.isGridOn)
             [utilityControl setSelectedSegmentIndex: -1];
     }
     else if ([utilityControl selectedSegmentIndex] == 2)
@@ -641,7 +652,7 @@
                                         animated: YES];
             }
 
-            if (((TransparentView *) self.view).isGridOn)
+            if (_transparentView.isGridOn)
                 [utilityControl setSelectedSegmentIndex: 1];
         }
     }
@@ -1136,14 +1147,14 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
 #if defined(DEBUG)
     NSLog(@"pinch scale: %f", pinch.scale);
 #endif
-    CGFloat width = ((TransparentView *) self.view).trackingGridWidth * pinch.scale;
+    CGFloat width = _transparentView.trackingGridWidth * pinch.scale;
     if (width < 5.0)
         width = 5.0;
     if (width > 300.0)
         width = 300.0;
     
     canvas.gridWidth = width;
-    ((TransparentView *) self.view).gridWidth = width;
+    _transparentView.gridWidth = width;
 }
 
 #pragma mark -
