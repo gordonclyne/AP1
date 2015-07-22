@@ -55,6 +55,7 @@
     self.transparentView.gridWidth = 25.0;
     self.transparentView.isGridOn = NO;
     self.transparentView.gridColor = [UIColor colorWithRed:0.960 green:0.730 blue:0.730 alpha:1.000];
+    self.transparentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_transparentView];
     
     [self.view bringSubviewToFront:settingsView];
@@ -100,7 +101,7 @@
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     CGAffineTransform targetRotation = [coordinator targetTransform];
     CGAffineTransform inverseRotation = CGAffineTransformInvert(targetRotation);
-    
+    [_transparentView setNeedsDisplay];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         
         self.canvas.transform = CGAffineTransformConcat(self.canvas.transform, inverseRotation);
