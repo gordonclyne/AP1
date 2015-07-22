@@ -11,39 +11,14 @@
 
 @implementation APSegmentedControl
 
-- (void) setSelectedSegmentIndex:(NSInteger) index
-{
-    if (index == self.selectedSegmentIndex)
-    {
-        [self sendActionsForControlEvents: UIControlEventValueChanged];
-    }
-    [super setSelectedSegmentIndex: index];
-}
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self sendActionsForControlEvents: UIControlEventTouchDown];
-    [super touchesBegan:touches withEvent: event];
-}
-
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    BOOL inside = NO;
-    for (UITouch *t in touches)
-    {
-        CGPoint p = [t locationInView: self];
-        if (p.x >= self.bounds.origin.x && p.y >= self.bounds.origin.y
-            && p.x < self.bounds.size.width && p.y < self.bounds.size.height)
-        {
-            inside = YES;
-        }
-    }
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSInteger previousSelectedSegmentIndex = self.selectedSegmentIndex;
+    [super touchesEnded:touches withEvent:event];
     
-    if (inside)
-        [self sendActionsForControlEvents: UIControlEventTouchUpInside];
-    else
-        [self sendActionsForControlEvents: UIControlEventTouchUpOutside];
-    [super touchesEnded: touches withEvent: event];
+    if (previousSelectedSegmentIndex == self.selectedSegmentIndex) {
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
 }
 
 @end

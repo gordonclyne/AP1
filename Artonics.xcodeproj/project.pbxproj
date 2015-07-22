@@ -57,7 +57,6 @@
 		647A5F291B23A44F0045B305 /* thin-line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F001B23A44F0045B305 /* thin-line@2x.png */; };
 		647A5F471B23A4850045B305 /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */; };
 		647A5F491B23A4850045B305 /* AP1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2D1B23A4850045B305 /* AP1ViewController.m */; };
-		647A5F4A1B23A4850045B305 /* APSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2E1B23A4850045B305 /* APSegmentedControl.m */; };
 		647A5F4B1B23A4850045B305 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F2F1B23A4850045B305 /* CanvasView.m */; };
 		647A5F4C1B23A4850045B305 /* CGContextAddRoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F301B23A4850045B305 /* CGContextAddRoundRect.m */; };
 		647A5F4D1B23A4850045B305 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F311B23A4850045B305 /* ColorPickerViewController.m */; };
@@ -69,6 +68,7 @@
 		647A5F531B23A4850045B305 /* TransparentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F371B23A4850045B305 /* TransparentView.m */; };
 		647A5F541B23A4850045B305 /* UIColor+rgb.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5F381B23A4850045B305 /* UIColor+rgb.m */; };
 		647A5F5B1B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */; };
+		6497C97F1B5EE4000011C00F /* APSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6497C97E1B5EE4000011C00F /* APSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +137,6 @@
 		647A5F001B23A44F0045B305 /* thin-line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-line@2x.png"; sourceTree = "<group>"; };
 		647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerViewController.xib; sourceTree = "<group>"; };
 		647A5F2D1B23A4850045B305 /* AP1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP1ViewController.m; sourceTree = "<group>"; };
-		647A5F2E1B23A4850045B305 /* APSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSegmentedControl.m; sourceTree = "<group>"; };
 		647A5F2F1B23A4850045B305 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
 		647A5F301B23A4850045B305 /* CGContextAddRoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGContextAddRoundRect.m; sourceTree = "<group>"; };
 		647A5F311B23A4850045B305 /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
@@ -163,6 +162,7 @@
 		647A5F461B23A4850045B305 /* UIColor+rgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+rgb.h"; sourceTree = "<group>"; };
 		647A5F581B23A4CF0045B305 /* ColorPickerViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ColorPickerViewController-iPhone.xib"; sourceTree = "<group>"; };
 		647A5F5D1B23A5F90045B305 /* Artonics_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artonics_Prefix.pch; sourceTree = "<group>"; };
+		6497C97E1B5EE4000011C00F /* APSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSegmentedControl.m; sourceTree = "<group>"; };
 		64BC5CDC1B52C0C80065644B /* handwriting-dakota.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "handwriting-dakota.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,9 +307,9 @@
 		647A5F2A1B23A45A0045B305 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6497C97E1B5EE4000011C00F /* APSegmentedControl.m */,
 				647A5F2B1B23A4850045B305 /* ColorPickerViewController.xib */,
 				647A5F2D1B23A4850045B305 /* AP1ViewController.m */,
-				647A5F2E1B23A4850045B305 /* APSegmentedControl.m */,
 				647A5F2F1B23A4850045B305 /* CanvasView.m */,
 				647A5F301B23A4850045B305 /* CGContextAddRoundRect.m */,
 				647A5F311B23A4850045B305 /* ColorPickerViewController.m */,
@@ -503,10 +503,10 @@
 				647A5F491B23A4850045B305 /* AP1ViewController.m in Sources */,
 				647A5F501B23A4850045B305 /* CrosshairView.m in Sources */,
 				647A5F511B23A4850045B305 /* RGBSliderView.m in Sources */,
-				647A5F4A1B23A4850045B305 /* APSegmentedControl.m in Sources */,
 				647A5F4B1B23A4850045B305 /* CanvasView.m in Sources */,
 				647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */,
 				647A5F541B23A4850045B305 /* UIColor+rgb.m in Sources */,
+				6497C97F1B5EE4000011C00F /* APSegmentedControl.m in Sources */,
 				647A5F521B23A4850045B305 /* ShakeToEraseAlertView.m in Sources */,
 				647A5F4D1B23A4850045B305 /* ColorPickerViewController.m in Sources */,
 				647A5EB31B23A40E0045B305 /* main.m in Sources */,

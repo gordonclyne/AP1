@@ -201,21 +201,41 @@
 - (IBAction) shareItemTapped: (id) sender
 {
 
-    shareActionSheet = [[UIActionSheet alloc] initWithTitle: @"Share on..."
-                                                           delegate: self
-                                                  cancelButtonTitle: NSLocalizedString(@"Cancel", @"Cancel")
-                                             destructiveButtonTitle: nil
-                                                  otherButtonTitles:
-                                @"Facebook",
-                                @"Twitter",
-                                @"Instagram",
-                                @"Pinterest",
-                                nil];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        [shareActionSheet showFromBarButtonItem: shareItem
-                                           animated: YES];
+    CGFloat imgWidth = canvas.bounds.size.width;
+    CGFloat imgHeight = canvas.bounds.size.height;
+    CGFloat scale = 1.0;
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft
+        || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(imgHeight, imgWidth), NO, scale);
     else
-        [shareActionSheet showInView: self.view];
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(imgWidth, imgHeight), NO, scale);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    switch ([[UIDevice currentDevice] orientation])
+    {
+        case UIDeviceOrientationPortraitUpsideDown:
+            CGContextRotateCTM(ctx, 3.14159);
+            CGContextTranslateCTM(ctx, -imgWidth, -imgHeight);
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            //NSLog(@"landscape left");
+            CGContextRotateCTM(ctx, -3.14159 / 2);
+            CGContextTranslateCTM(ctx, -imgWidth, 0);
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            //NSLog(@"landscape right");
+            CGContextRotateCTM(ctx, 3.14159 / 2);
+            CGContextTranslateCTM(ctx, 0, -imgHeight);
+            break;
+    }
+    [canvas.layer renderInContext: ctx];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]
+                                            initWithActivityItems:@[@"Created with Artonics",image] applicationActivities:nil];
+    activityVC.popoverPresentationController.barButtonItem = shareItem;
+    [self presentViewController:activityVC animated:YES completion:nil];
+    
     
 }
 
@@ -548,31 +568,11 @@
 	[eraseImageAlert show];
 }
 
-- (IBAction) touchDownInUtilityControl: (id) sender
-{
-#if defined(DEBUG)
-    NSLog(@"touchDownInUtilityControl:");
-#endif
-    [utilityControl setSelectedSegmentIndex: -1];
-}
 
-- (IBAction) touchUpOutsideUtilityControl: (id) sender
-{
-    // Reset state...
-    if (_transparentView.isGridOn)
-        [utilityControl setSelectedSegmentIndex: 1];
-    // else if (canvas.backgroundImage != nil)
-    //   [utilityControl setSelectedSegmentIndex: 2];
-    else
-        [utilityControl setSelectedSegmentIndex: -1];
-}
 
 - (IBAction) utilityControlChanged: (id) sender
 {
-#if defined(DEBUG)
-    NSLog(@"utilityControlChanged: %@ -- %@", utilityControl,
-          handlingUtilityControl ? @"YES" : @"NO");
-#endif
+
     
     if (handlingUtilityControl)
         return;

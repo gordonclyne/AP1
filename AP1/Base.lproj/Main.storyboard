@@ -164,8 +164,6 @@
                                             <segment title="" image="background-image.png"/>
                                         </segments>
                                         <connections>
-                                            <action selector="touchDownInUtilityControl:" destination="BYZ-38-t0r" eventType="touchDown" id="ZkH-fL-wdA"/>
-                                            <action selector="touchUpOutsideUtilityControl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Krz-vd-BrI"/>
                                             <action selector="utilityControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="idc-UY-3JN"/>
                                         </connections>
                                     </segmentedControl>
