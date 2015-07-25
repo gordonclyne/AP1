@@ -101,7 +101,9 @@
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     CGAffineTransform targetRotation = [coordinator targetTransform];
     CGAffineTransform inverseRotation = CGAffineTransformInvert(targetRotation);
+    
     [_transparentView setNeedsDisplay];
+    
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         
         self.canvas.transform = CGAffineTransformConcat(self.canvas.transform, inverseRotation);
