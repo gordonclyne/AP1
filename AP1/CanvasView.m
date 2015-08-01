@@ -420,13 +420,13 @@
     if (f > 0)
         self.lineThickness = f;
     else
-        self.lineThickness = 2.0;
+        self.lineThickness = 1.0;
     
     NSInteger i = [defaults integerForKey: kLineCountUserDefaultsKey];
     if (i > 0)
         self.lineCount = i;
     else
-        self.lineCount = 32;
+        self.lineCount = 42;
     
     self.leftOutlierCount = [defaults integerForKey: kLeftOutlierCountUserDefaultsKey];
     self.rightOutlierCount = [defaults integerForKey: kRightOutlierCountUserDefaultsKey];

@@ -626,7 +626,7 @@
         else
         {
             // Choose image, set background image.
-            UIImagePickerController *picker = [[UIImagePickerController alloc] initWithRootViewController: nil];
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
             picker.delegate = self;
             picker.allowsEditing = NO;
             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -864,7 +864,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
         if (cancelIndex == buttonIndex)
             return;
         
-        UIImagePickerController *picker = [[UIImagePickerController alloc] initWithRootViewController: nil];
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
         picker.allowsEditing = NO;
         if (buttonIndex == 0)

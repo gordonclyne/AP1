@@ -406,6 +406,7 @@
 					};
 					647A5EC51B23A40F0045B305 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = RR4B7R7ECH;
 						TestTargetID = 647A5EAC1B23A40E0045B305;
 					};
 				};
@@ -641,14 +642,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Artonics International ltd. (RR4B7R7ECH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Artonics International ltd. (RR4B7R7ECH)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = AP1;
-				PROVISIONING_PROFILE = "f045761b-e1fc-434a-ad2b-e0c90f28a849";
+				PROVISIONING_PROFILE = "7c05ae59-6589-4594-84ff-6e0a66776b0f";
 			};
 			name = Debug;
 		};
@@ -657,14 +658,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Artonics International ltd. (RR4B7R7ECH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Artonics International ltd. (RR4B7R7ECH)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = AP1;
-				PROVISIONING_PROFILE = "f045761b-e1fc-434a-ad2b-e0c90f28a849";
+				PROVISIONING_PROFILE = "7c05ae59-6589-4594-84ff-6e0a66776b0f";
 			};
 			name = Release;
 		};
@@ -672,6 +673,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -683,7 +686,7 @@
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = AP1Tests;
-				PROVISIONING_PROFILE = "f776ae7a-6126-4475-ba5b-00b77a577c97";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
 			};
 			name = Debug;
@@ -692,6 +695,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -699,7 +704,7 @@
 				INFOPLIST_FILE = AP1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = AP1Tests;
-				PROVISIONING_PROFILE = "f776ae7a-6126-4475-ba5b-00b77a577c97";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AP1.app/AP1";
 			};
 			name = Release;
