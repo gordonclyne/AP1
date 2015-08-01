@@ -1168,5 +1168,14 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
 	[controller dismissModalViewControllerAnimated: YES];
 	[self becomeFirstResponder];
 }
+#pragma mark -
+#pragma mark Navigation
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UIViewController* controller = segue.destinationViewController;
+        controller.preferredContentSize = CGSizeMake(500, 500);
+    }
+}
 @end
+
