@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52D2AF761B6D1D5B00DD22E0 /* handwriting-dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64BC5CDC1B52C0C80065644B /* handwriting-dakota.ttf */; };
 		642000EF1B5163EB001D1F29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642000ED1B5163C9001D1F29 /* Social.framework */; };
 		647A5EB31B23A40E0045B305 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB21B23A40E0045B305 /* main.m */; };
 		647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB51B23A40E0045B305 /* AppDelegate.m */; };
@@ -455,6 +456,7 @@
 				647A5F041B23A44F0045B305 /* angled@2x.png in Resources */,
 				647A5F1D1B23A44F0045B305 /* left-line@2x.png in Resources */,
 				647A5F031B23A44F0045B305 /* angled.png in Resources */,
+				52D2AF761B6D1D5B00DD22E0 /* handwriting-dakota.ttf in Resources */,
 				647A5F121B23A44F0045B305 /* few-lines@2x.png in Resources */,
 				647A5F081B23A44F0045B305 /* blue.png in Resources */,
 				647A5F1F1B23A44F0045B305 /* loop@2x.png in Resources */,
@@ -642,14 +644,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Artonics International ltd. (RR4B7R7ECH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gordon Clyne (56C4TXRLA9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gordon Clyne (56C4TXRLA9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = AP1;
-				PROVISIONING_PROFILE = "7c05ae59-6589-4594-84ff-6e0a66776b0f";
+				PROVISIONING_PROFILE = "fec236a0-ffe0-4bb0-8ba1-6e1a475cb1be";
 			};
 			name = Debug;
 		};
@@ -658,14 +660,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Artonics International ltd. (RR4B7R7ECH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gordon Clyne (56C4TXRLA9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gordon Clyne (56C4TXRLA9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AP1/AP1_Prefix.pch;
 				INFOPLIST_FILE = AP1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = AP1;
-				PROVISIONING_PROFILE = "7c05ae59-6589-4594-84ff-6e0a66776b0f";
+				PROVISIONING_PROFILE = "fec236a0-ffe0-4bb0-8ba1-6e1a475cb1be";
 			};
 			name = Release;
 		};
