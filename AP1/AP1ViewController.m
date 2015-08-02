@@ -526,25 +526,6 @@
     canvas.curvedJoints = [curvedJointControl selectedSegmentIndex] == 1;
 }
 
-- (IBAction) infoButtonTapped: (id) sender
-{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-        UIPopoverController *pop = [[UIPopoverController alloc] initWithContentViewController: aboutViewController];
-        pop.popoverContentSize = CGSizeMake(600, 300);
-        pop.delegate = self;
-        chooserTarget = ColorChooserTargetNone;
-        [pop presentPopoverFromRect: [infoButton bounds]
-                             inView: infoButton
-           permittedArrowDirections: UIPopoverArrowDirectionAny
-                           animated: YES];
-    }
-    else
-    {
-        [self presentModalViewController: aboutViewController
-                                animated: YES];
-    }
-}
 
 - (IBAction) aboutDone: (id) sender
 {
