@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52D2AF761B6D1D5B00DD22E0 /* handwriting-dakota.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64BC5CDC1B52C0C80065644B /* handwriting-dakota.ttf */; };
+		52D2AF791B6D24BF00DD22E0 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D2AF781B6D24BF00DD22E0 /* AboutViewController.m */; };
 		642000EF1B5163EB001D1F29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642000ED1B5163C9001D1F29 /* Social.framework */; };
 		647A5EB31B23A40E0045B305 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB21B23A40E0045B305 /* main.m */; };
 		647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 647A5EB51B23A40E0045B305 /* AppDelegate.m */; };
@@ -82,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52D2AF771B6D24BF00DD22E0 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		52D2AF781B6D24BF00DD22E0 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		642000ED1B5163C9001D1F29 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		647A5EAD1B23A40E0045B305 /* AP1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AP1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		647A5EB11B23A40E0045B305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				647A5EBF1B23A40E0045B305 /* LaunchScreen.xib */,
 				647A5ED61B23A4270045B305 /* Previous Files */,
 				647A5EB01B23A40E0045B305 /* Supporting Files */,
+				52D2AF771B6D24BF00DD22E0 /* AboutViewController.h */,
+				52D2AF781B6D24BF00DD22E0 /* AboutViewController.m */,
 			);
 			path = AP1;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 				647A5F041B23A44F0045B305 /* angled@2x.png in Resources */,
 				647A5F1D1B23A44F0045B305 /* left-line@2x.png in Resources */,
 				647A5F031B23A44F0045B305 /* angled.png in Resources */,
+				52D2AF761B6D1D5B00DD22E0 /* handwriting-dakota.ttf in Resources */,
 				647A5F121B23A44F0045B305 /* few-lines@2x.png in Resources */,
 				647A5F081B23A44F0045B305 /* blue.png in Resources */,
 				647A5F1F1B23A44F0045B305 /* loop@2x.png in Resources */,
@@ -504,6 +511,7 @@
 				647A5F491B23A4850045B305 /* AP1ViewController.m in Sources */,
 				647A5F501B23A4850045B305 /* CrosshairView.m in Sources */,
 				647A5F511B23A4850045B305 /* RGBSliderView.m in Sources */,
+				52D2AF791B6D24BF00DD22E0 /* AboutViewController.m in Sources */,
 				647A5F4B1B23A4850045B305 /* CanvasView.m in Sources */,
 				647A5EB61B23A40E0045B305 /* AppDelegate.m in Sources */,
 				647A5F541B23A4850045B305 /* UIColor+rgb.m in Sources */,

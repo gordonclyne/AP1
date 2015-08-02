@@ -352,10 +352,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="Pcr-gu-dxv">
             <objects>
-                <viewController id="USd-Mf-zD6" sceneMemberID="viewController">
+                <viewController id="USd-Mf-zD6" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Jf-oI-EF6"/>
                         <viewControllerLayoutGuide type="bottom" id="7fh-bX-dRP"/>
@@ -364,23 +364,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="About" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-b1-ODN">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="531"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About" translatesAutoresizingMaskIntoConstraints="NO" id="7M0-b1-ODN">
+                                <rect key="frame" x="16" y="0.0" width="468" height="500"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bernardo Santana" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cql-QP-vSl">
-                                <rect key="frame" x="135" y="414" width="254" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gordon Clyne" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xF-tS-9pZ">
+                                <rect key="frame" x="159" y="371" width="182" height="36"/>
                                 <fontDescription key="fontDescription" name="Dakota" family="Dakota" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gordon Clyne" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xF-tS-9pZ">
-                                <rect key="frame" x="135" y="376" width="188" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artonics 1.2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWf-fw-bGJ">
+                                <rect key="frame" x="189.5" y="325.5" width="121" height="28.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bernardo Santana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cql-QP-vSl">
+                                <rect key="frame" x="134" y="404" width="232.5" height="36"/>
                                 <fontDescription key="fontDescription" name="Dakota" family="Dakota" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7xF-tS-9pZ" firstAttribute="top" secondItem="PWf-fw-bGJ" secondAttribute="bottom" constant="17" id="F3n-8B-QSA"/>
+                            <constraint firstItem="7fh-bX-dRP" firstAttribute="top" secondItem="Cql-QP-vSl" secondAttribute="bottom" constant="60" id="HHL-dD-5Zd"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="7M0-b1-ODN" secondAttribute="bottom" id="M5n-JS-6GW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7M0-b1-ODN" secondAttribute="trailing" id="NRA-Yn-VP2"/>
+                            <constraint firstItem="7M0-b1-ODN" firstAttribute="leading" secondItem="Sde-dF-wj1" secondAttribute="leadingMargin" id="Ny3-fj-d6I"/>
+                            <constraint firstItem="Cql-QP-vSl" firstAttribute="top" secondItem="7xF-tS-9pZ" secondAttribute="bottom" constant="-3" id="T8G-NV-WA4"/>
+                            <constraint firstAttribute="centerX" secondItem="PWf-fw-bGJ" secondAttribute="centerX" id="Ve6-aL-U78"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="7M0-b1-ODN" secondAttribute="bottom" id="YAE-l8-PxM"/>
+                            <constraint firstItem="7M0-b1-ODN" firstAttribute="top" secondItem="8Jf-oI-EF6" secondAttribute="bottom" id="eUl-tD-Tdl"/>
+                            <constraint firstAttribute="centerX" secondItem="Cql-QP-vSl" secondAttribute="centerX" id="gEo-Ri-qnx"/>
+                            <constraint firstAttribute="centerX" secondItem="7xF-tS-9pZ" secondAttribute="centerX" id="mvx-j2-Q6I"/>
+                        </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="500" height="500"/>
                     <nil key="simulatedStatusBarMetrics"/>
