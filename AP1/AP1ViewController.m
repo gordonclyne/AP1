@@ -38,10 +38,10 @@
 }
 */
 
--(bool)preferStatusBarHidden
-{
+- (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void) viewDidLoad
@@ -162,7 +162,7 @@
 
 - (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    NSLog(@"mainController motionEnded: %d withEvent: %@", motion, event);
+    NSLog(@"mainController motionEnded: %ld withEvent: %@", (long)motion, event);
     if (motion == UIEventSubtypeMotionShake)
     {
         // Note, this does not work. We can't seem to get motion events while
@@ -228,6 +228,14 @@
             //NSLog(@"landscape right");
             CGContextRotateCTM(ctx, 3.14159 / 2);
             CGContextTranslateCTM(ctx, 0, -imgHeight);
+            break;
+        case UIDeviceOrientationFaceDown:
+            break;
+        case UIDeviceOrientationFaceUp:
+            break;
+        case UIDeviceOrientationPortrait:
+            break;
+        case UIDeviceOrientationUnknown:
             break;
     }
     [canvas.layer renderInContext: ctx];
@@ -362,8 +370,8 @@
         cpvc.colorChosenTarget = self;
         cpvc.colorChosenAction = @selector(colorPicker:didChooseColor:);
         chooserTarget = ColorChooserTargetBackground;
-        [self presentModalViewController: cpvc
-                                animated: YES];
+        [self presentViewController: cpvc
+                                animated: YES completion: nil];
     }
 }
 

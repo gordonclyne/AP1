@@ -23,10 +23,14 @@
 
 #define distance(p1,p2) sqrt((((p1).x - (p2).x) * ((p1).x - (p2).x)) + (((p1).y - (p2).y) * ((p1).y - (p2).y)))
 
+
 @implementation CanvasView
 
 @synthesize linesLayer = mainLayer;
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 // Assign val to var, and retain var, releasing the previous value if any,
 // and marking the display as dirty.
 #define do_retain(var,val) do { \

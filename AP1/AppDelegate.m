@@ -15,12 +15,19 @@
 
 @synthesize viewController;
 
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     
     // Override point for customization after app launch.
     
-    [application setStatusBarHidden: YES
-                           animated: YES];
+
+    
+    //[application setStatusBarHidden: YES
+                           //animated: YES];
     viewController = (AP1ViewController *)self.window.rootViewController;
     
     canvas = [[CanvasView alloc] initWithFrame: _window.bounds];
