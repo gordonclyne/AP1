@@ -465,9 +465,9 @@
     NSLog(@"loaded state: colors: (%@, %@, %@, %@, %@)",
           self.backgroundColor, self.leftLineColor, self.rightLineColor,
           self.leftOutlierColor, self.rightOutlierColor);
-    NSLog(@"               lines: %f, %d, %d, %d, %d",
-          self.lineThickness, self.lineCount, self.leftOutlierCount,
-          self.rightOutlierCount, self.curvedJoints);
+    NSLog(@"               lines: %f, %ld, %d, %ld, %d",
+          self.lineThickness, (long)self.lineCount, self.leftOutlierCount,
+          (long)self.rightOutlierCount, self.curvedJoints);
     NSMutableString *s = [NSMutableString string];
     for (PointEntry *p = head; p != NULL; p = p->next)
     {

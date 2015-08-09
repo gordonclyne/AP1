@@ -78,7 +78,7 @@
                                userInfo: nil] raise];
     if (index < 0 || index > steps)
         [[NSException exceptionWithName: @"IndexOutOfRange"
-                                 reason: [NSString stringWithFormat: @"index must be between 0 and %d", steps]
+                                 reason: [NSString stringWithFormat: @"index must be between 0 and %ld", (long)steps]
                                userInfo: nil] raise];
     
     CGFloat r1 = [startColor redValue];

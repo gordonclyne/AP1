@@ -18,7 +18,7 @@
 
 - (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    NSLog(@"alertView motionEnded:%d withEvent:%@", motion, event);
+    NSLog(@"alertView motionEnded:%ld withEvent:%@", (long)motion, event);
     [super motionEnded: motion
              withEvent: event];
     if (motion == UIEventSubtypeMotionShake)

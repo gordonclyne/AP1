@@ -188,7 +188,7 @@
 
 - (IBAction) cancelButtonTapped:(id)sender
 {
-    [self dismissModalViewControllerAnimated: YES];
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 - (IBAction) doneButtonTapped: (id) sender
@@ -205,7 +205,7 @@
                         atIndex: 3];
         [invocation invoke];
     }
-    [self dismissModalViewControllerAnimated: YES];
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 @end

@@ -526,6 +526,8 @@
             canvas.rightOutlierColor = color;
             [rightOutlierColorButton setColor: color];
             break;
+        case ColorChooserTargetNone:
+            break;
     }
 }
 
@@ -914,7 +916,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
 	// 4 Print
 	int realButtonIndex = buttonIndex - [sheet firstOtherButtonIndex];
     
-	NSLog(@"button index: %d real button index: %d", buttonIndex, realButtonIndex);
+	NSLog(@"button index: %ld real button index: %d", (long)buttonIndex, realButtonIndex);
 	
     if (buttonIndex != [sheet cancelButtonIndex])
     {
