@@ -402,7 +402,7 @@
         cpvc.colorChosenTarget = self;
         cpvc.colorChosenAction = @selector(colorPicker:didChooseColor:);
         chooserTarget = ColorChooserTargetLeftLine;
-        [self presentModalViewController: cpvc animated: YES];
+        [self presentViewController: cpvc animated: YES completion: nil];
     }
 }
 
@@ -433,7 +433,7 @@
         cpvc.colorChosenTarget = self;
         cpvc.colorChosenAction = @selector(colorPicker:didChooseColor:);
         chooserTarget = ColorChooserTargetRightLine;
-        [self presentModalViewController: cpvc animated: YES];
+        [self presentViewController: cpvc animated: YES completion:nil];
         [cpvc autorelease];
     }
 }
@@ -465,7 +465,7 @@
         cpvc.colorChosenTarget = self;
         cpvc.colorChosenAction = @selector(colorPicker:didChooseColor:);
         chooserTarget = ColorChooserTargetLeftOutlier;
-        [self presentModalViewController: cpvc animated: YES];
+        [self presentViewController: cpvc animated: YES completion: nil];
         [cpvc autorelease];
     }
 }
@@ -497,7 +497,7 @@
         cpvc.colorChosenTarget = self;
         cpvc.colorChosenAction = @selector(colorPicker:didChooseColor:);
         chooserTarget = ColorChooserTargetRightOutlier;
-        [self presentModalViewController: cpvc animated: YES];
+        [self presentViewController: cpvc animated: YES completion: nil];
         [cpvc autorelease];
     }    
 }
@@ -549,14 +549,14 @@
     }
     else
     {
-        [self presentModalViewController: aboutViewController
-                                animated: YES];
+        [self presentViewController: aboutViewController
+                                animated: YES completion: nil];
     }
 }
 
 - (IBAction) aboutDone: (id) sender
 {
-    [aboutViewController dismissModalViewControllerAnimated: YES];
+    [aboutViewController dismissViewControllerAnimated: YES completion: nil];
 }
 
 - (IBAction) lineSizeSliderChanged: (id) sender
@@ -659,8 +659,8 @@
             }
             else
             {
-                [self presentModalViewController: picker
-                                        animated: YES];
+                [self presentViewController: picker
+                                        animated: YES completion: nil];
             }
 
             if (_transparentView.isGridOn)
@@ -900,8 +900,8 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
         }
         else
         {
-            [self presentModalViewController: picker
-                                    animated: YES];
+            [self presentViewController: picker
+                                    animated: YES completion: nil];
         }
         
         return;
@@ -988,8 +988,8 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
                                    fileName: @"image.png"];
                 NSLog(@"present mail composer: %@", composer);
                 [self resignFirstResponder];
-                [self presentModalViewController: composer
-                                        animated: YES];
+                [self presentViewController: composer
+                                        animated: YES completion: nil];
                 [composer autorelease];
             }
             else if (realButtonIndex == 2) // submit to gallery
@@ -1002,8 +1002,8 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
                 [composer setToRecipients: [NSArray arrayWithObject: @"Gallery@artonics-international.com"]];
                 [composer setSubject: NSLocalizedString(@"Artonics User Gallery Submission", @"Artonics User Gallery Submission")];
                 [self resignFirstResponder];
-                [self presentModalViewController: composer
-                                        animated: YES];
+                [self presentViewController: composer
+                                        animated: YES completion: nil];
                 [composer autorelease];
             }
             else if (realButtonIndex == 3) // save hi-res
@@ -1134,7 +1134,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [imagePickerPopover dismissPopoverAnimated: YES];
     else
-        [self dismissModalViewControllerAnimated: YES];
+        [self dismissViewControllerAnimated: YES completion: nil];
     canvas.backgroundImage = nil;
 }
 
@@ -1146,7 +1146,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [imagePickerPopover dismissPopoverAnimated: YES];
     else
-        [self dismissModalViewControllerAnimated: YES];
+        [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 #pragma mark -
@@ -1173,7 +1173,7 @@ didDismissWithButtonIndex: (NSInteger) buttonIndex
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
-	[controller dismissModalViewControllerAnimated: YES];
+	[controller dismissViewControllerAnimated: YES completion: nil];
 	[self becomeFirstResponder];
 }
 #pragma mark -
